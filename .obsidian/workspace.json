@@ -6,7 +6,7 @@
       {
         "id": "100ae12e10710cf8",
         "type": "tabs",
-        "dimension": 16.035729476818375,
+        "dimension": 19.218500797448165,
         "children": [
           {
             "id": "0a45d546a6a3bd7f",
@@ -29,7 +29,7 @@
       {
         "id": "fd8cce2db727dc7f",
         "type": "tabs",
-        "dimension": 83.96427052318163,
+        "dimension": 80.78149920255183,
         "children": [
           {
             "id": "f57ac6f8a6567c42",
@@ -206,7 +206,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 209
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,7 +222,7 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "0a45d546a6a3bd7f",
+  "active": "b683198e1ce5f28c",
   "lastOpenFiles": [
     "AI Agent学习/大模型Agent/大模型Agent知识从0-1笔记-万字详解版本！.md",
     "AI Agent学习/Agent系统.md",
