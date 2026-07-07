@@ -1,0 +1,35 @@
+# Local/private study materials
+interview*/
+**/interview*/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Obsidian local state and cache
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/trash/
+
+# Dependency/build/cache folders
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
