@@ -220,17 +220,20 @@ from langchain_core.tools import tool
 def get_weather(city: str) -> str:
     """Get the weather for a city (工具描述，会自动传递给模型)"""
     return f"{city}天气是25度"
-
+```
+**自己增加工具：**
+工具中的注释在Langchain中会自动解析转换为对工具的描述
+```Python
 @tool
 def get_time(city: str) -> str:
     """Get the current time of city"""
-    return "当前时间：2024年"
+    return "当前时间：2026年"
 ```
 
 **绑定工具到模型**：
 
 ```python
-llm_with_tools = llm.bind_tools([get_weather, get_time])
+llm_with_tools = llm.bind_tools([get_weather, get_time])#把get_weather这个工具与模型绑定
 response = llm_with_tools.invoke(prompt)
 # response.tool_calls 会自动解析出工具调用
 ```
@@ -302,13 +305,14 @@ ToolCall（工具调用）的本质是让大模型能够识别并执行外部函
 
 ---
 
-## 第三部分：Reflection 理论与代码
+## 第三部分：ReAct/Reflection 理论与代码
 
-#### 什么是 Reflection？
+> 实现了FountionCalling模型能够完成单一的“动作“，但是无法完成一个”任务“。于是提出了：ReAct最经典的Loop范式，
 
-Reflection，译为 "反思"，是 Agent Loop 的第二个经典范式。
-
-**核心思想**：吾日三省吾身 —— 重点在于 "醒" 字。
+#### 什么是ReAct?
+即是reasoning action思考和行动 
+![[Pasted image 20260714042117.png]]
+模型在一轮工具调用后把输出再传回模型，进行思考是否还需要调用工具，如不需要则输出answer
 
 #### 问题背景
 
@@ -405,6 +409,9 @@ start → agent → [should_continue] → tools → agent
 ---
 
 ### Reflection 完整实现
+#### 什么是 Reflection？
+Reflection，译为 "反思"，是 Agent Loop 的第二个经典范式。
+**核心思想**：吾日三省吾身 —— 重点在于 "醒" 字。
 
 #### 与 ReAct 的区别
 
