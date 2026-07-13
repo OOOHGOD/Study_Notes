@@ -1,12 +1,14 @@
 
 > 系列学习笔记：从 ToolCall 的底层原理与代码实现，延伸到 Agent Loop 中的 Reflection 范式。
 
-## 学习资源
+## 前置学习资源
 
-- [配套视频：一期讲透！理论 + 代码从 ToolCall 到 Harness、Claw](https://www.bilibili.com/video/BV1dw526tEMA?t=137.5&p=3)
-- [GitHub 仓库：Wood-Q/MokioAgent](https://github.com/Wood-Q/MokioAgent)（包含 `master` 项目分支和 `theory` 理论分支）
-- [Notion 笔记](https://www.notion.so/ToolCall-Claw-334747825dae800bbf46c8eb0008e5b2?pvs=74)
-- PPT：见 GitHub 仓库的 `theory` 分支
+| [快速入门 - LangChain 文档 --- Quickstart - Docs by LangChain](https://docs.langchain.com/oss/python/langchain/quickstart)              |
+| --------------------------------------------------------------------------------------------------------------------------------- |
+| 【从pip到uv：一口气梳理现代Python项目管理全流程！】https://www.bilibili.com/video/BV13WGHz8EEz?vd_source=cb8aa1c7c46e4af8f825bfcbba1dcc71             |
+| 【【闪客】一口气拆穿Skill/MCP/RAG/Agent/OpenClaw底层逻辑】https://www.bilibili.com/video/BV1ojfDBSEPv?vd_source=cb8aa1c7c46e4af8f825bfcbba1dcc71 |
+|                                                                                                                                   |
+
 ---
 
 ## 第一部分：ToolCall 理论
@@ -93,11 +95,9 @@ OpenAI 推出 Function Calling，让模型能够**调用外部工具**。
 #### 四、ToolCall 与 Function Calling 的关系
 
 **补充说明**：
-
 > Function Calling 是 OpenAI 在 2023 年 6 月推出的 API 功能，用于让模型调用外部工具。"ToolCall" 是后续社区和厂商对这一能力更通用的称呼，本质上是同一概念。
 
 ---
-
 #### 五、面试题
 
 ##### Q1：Agent 的本质是什么？为什么说所有后续处理都是针对输入输出文本？
