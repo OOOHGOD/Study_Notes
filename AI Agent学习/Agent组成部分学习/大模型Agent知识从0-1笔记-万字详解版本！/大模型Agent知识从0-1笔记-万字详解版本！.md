@@ -1,43 +1,30 @@
 
-# 【Agent入门到实战】深度理解Agent全链路内容和深度优化、系统评估
-
 ---
+
+
+
+
+
 ## **什么是Agent？为什么说它是AI的下一个战场**
-
 ### 1\.1 从ChatGPT到Agent的进化
-
 想象一下这个场景：
-
 **传统的ChatGPT对话：**
-
 - **你：「帮我规划一次周末去京都的旅行」**
-
 - **ChatGPT：「当然！京都是个美丽的城市，你可以考虑参观清水寺、金阁寺\.\.\.建议提前预订酒店\.\.\.」**
-
 - **你：（需要自己去各个网站查机票、订酒店、规划路线）**
-
-![image\.png](图片和附件/image%2012.png)
-
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2012.png)
 **AI Agent的体验：**
-
 - 你：「帮我规划一次周末去京都的旅行，预算5000元」
-
 - Agent：（自动搜索机票价格）→（比较酒店并筛选）→（规划每日行程）→（计算预算）
-
 - Agent：「已为您完成规划！往返机票1800元，住宿2晚1200元，包含清水寺、金阁寺等5个景点的详细行程，总预算4800元。\[查看完整计划\.pdf\]」
-
 **这就是最本质的区别：ChatGPT给建议，Agent帮你干活。**
 
 ### 1\.2 Agent的核心定义
 
 **AI Agent（智能体）** 是一个具备以下三大能力的智能系统：
-
 1. **自主感知**：能够理解当前环境和任务需求
-
 2. **自主决策**：能够制定执行计划并动态调整
-
 3. **自主执行**：能够调用工具完成实际任务
-
 **用一句话总结：Agent = LLM（大脑） \+ 工具（手脚） \+ 记忆（经验） \+ 规划（智慧）**
 
 ---
@@ -48,7 +35,7 @@
 
 **让我们先看一张完整的Agent架构图，理解各个组件如何协同工作：**
 
-![image\.png](图片和附件/image%202.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%202.png)
 
 ### 2\.2 架构分层解析
 
@@ -126,7 +113,7 @@
 
 ### 3\.1 组成部分总览
 
-![image\.png](图片和附件/image.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image.png)
 
 ### 3\.2 组成部分一：大语言模型（LLM Brain）
 
@@ -201,7 +188,7 @@ print(response.content)
 
 **方法一：ReAct框架（边想边做）**
 
-![image\.png](图片和附件/image%2013.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2013.png)
 
 **ReAct特点**：
 
@@ -213,7 +200,7 @@ print(response.content)
 
 **方法二：Plan\-and\-Execute（先计划后执行）**
 
-![image\.png](图片和附件/image%209.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%209.png)
 
 **Plan\-and\-Execute特点**：
 
@@ -410,7 +397,7 @@ prompt = f"""
 
 #### 记忆架构图
 
-![image\.png](图片和附件/image%2011.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2011.png)
 
 #### 记忆模块的高级技巧
 
@@ -695,7 +682,7 @@ ReAct（Reasoning \+ Acting）是目前最主流的Agent工作框架，由Google
 
 #### ReAct的核心循环
 
-![image\.png](图片和附件/image%2014.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2014.png)
 
 #### 完整的ReAct示例
 
@@ -812,7 +799,7 @@ print(result["output"])
 
 #### 模式1：Chain of Thought \(CoT\) \- 纯推理
 
-![image\.png](图片和附件/image%2010.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2010.png)
 
 **特点**：
 
@@ -837,7 +824,7 @@ CoT推理：
 
 #### 模式2：Plan\-and\-Execute \- 先计划后执行
 
-![image\.png](图片和附件/image%204.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%204.png)
 
 **特点**：
 
@@ -876,7 +863,7 @@ for task in plan:
 
 #### 模式3：Self\-Ask \- 自问自答
 
-![image\.png](图片和附件/image%206.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%206.png)
 
 **示例**：
 
@@ -1507,13 +1494,13 @@ UI设计Agent：负责界面设计
 
 ### 6\.2 多Agent系统架构
 
-![image\.png](图片和附件/image%203.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%203.png)
 
 ### 6\.3 多Agent协作模式
 
 #### 模式1：层级结构（Hierarchical）
 
-![image\.png](图片和附件/image%205.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%205.png)
 
 **特点**：
 
@@ -1586,7 +1573,7 @@ result = manager.delegate("分析2024年AI Agent市场趋势并撰写报告")
 
 #### 模式2：平等协作（Collaborative）
 
-![image\.png](图片和附件/image%2015.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%2015.png)
 
 **特点**：
 
@@ -1651,7 +1638,7 @@ result = collaborative_work("设计一个AI Agent产品的营销策略")
 
 #### 模式3：流水线（Pipeline）
 
-![image\.png](图片和附件/image%207.png)
+![image\.png](AI%20Agent学习/Agent组成部分学习/大模型Agent知识从0-1笔记-万字详解版本！/图片和附件/image%207.png)
 
 **特点**：
 
