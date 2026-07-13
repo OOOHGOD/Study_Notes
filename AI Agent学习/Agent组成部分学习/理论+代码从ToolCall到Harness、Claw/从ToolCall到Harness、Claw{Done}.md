@@ -65,7 +65,7 @@ OpenAI 推出 Function Calling，让模型能够**调用外部工具**。
 - 本地解析：提取 `search`，找到对应函数，执行
 
 ##### 3.2 本质定义
-> **Function Calling 的本质**：让模型去**结构化输出**，然后由本地代码**翻译并执行**。
+> **Function Calling 的本质**：让模型去**结构化输出**，然后由本地代码**翻译并执行**
 
 **结构化输出形式**：
 
@@ -149,7 +149,7 @@ PPT：见 GitHub 仓库的 `theory` 分支
 
 #### 一、文本解析实现 ToolCall（基础原理）
 **核心思路**：模拟模型如何从文本中解析出工具名和参数。
-
+![[Pasted image 20260714032339.png]]
 ```python
 # 定义工具函数
 def get_weather(city):
@@ -168,12 +168,12 @@ city = "北京"
 
 ---
 
-#### 二、自定义协议实现 ToolCall
-**协议设计**：
+#### 二、自定义协议实现 ToolCall/Fountion Calling
+**prompt协议设计**：
 
 - 用 `<tool_call>` 标签包裹工具名
 - 用 `<tool_args>` 标签包裹参数
-
+![[Pasted image 20260714032805.png]]
 **代码实现**：
 
 ```python
@@ -195,8 +195,12 @@ chat = ChatOpenAI(
 # 系统prompt规定输出格式
 system_prompt = "你是一个助手，必须按照<tool_call>工具名</tool_call><tool_args>参数</tool_args>格式回答"
 
-# 执行流程
-response = chat.invoke([system_prompt, user_prompt])
+# 执行流程，invoke把上面的信息传给模型
+response = chat.invoke([
+	SystemMessage(content=SYSTEM_PROMPT),
+	HumanMessage(content=user_prompt),
+	])
+#把原始的输出进行一个工具调用解析
 tool_name, args = parse_tool_call(response.content)
 if tool_name == "get_weather":
     result = get_weather(args)
@@ -208,10 +212,10 @@ if tool_name == "get_weather":
 
 #### 三、LangChain 实现 ToolCall
 **使用装饰器**：
-
+[[装饰器知识点{done}]]
 ```python
 from langchain_core.tools import tool
-
+#直接使用装饰器包裹工具
 @tool
 def get_weather(city: str) -> str:
     """Get the weather for a city (工具描述，会自动传递给模型)"""
