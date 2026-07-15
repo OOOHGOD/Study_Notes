@@ -314,10 +314,70 @@ ToolCall（工具调用）的本质是让大模型能够识别并执行外部函
 ![[Pasted image 20260714042117.png]]
 模型在一轮工具调用后把输出再传回模型，进行思考是否还需要调用工具，如不需要则输出answer
 
-#### 问题背景
+**假设现在有一个任务：**
+我们需要agent检查inbox，并且把a.txt文件移动到archive文件夹，然后输出文件整理后的目录变化。
+
+我们需要使用到Tool:
+- list_files列出文件；
+- move_file移动文件
+
+![[Pasted image 20260715154742.png]]
+ReAct代码思路：
+```Python
+# 导入LangChain核心消息类型（必需依赖）
+from langchain_core.messages import SystemMessage, HumanMessage, ToolMessage
+def main() -> None:
+    # 1. 初始化对话上下文：系统提示词 + 用户任务
+    messages = [SystemMessage(content=SYSTEM_PROMPT), HumanMessage(content=task)]
+
+    # 2. 开启Agent循环，最多执行7轮工具调用（range左闭右开，1~7共7次）
+    for turn in range(1, 8):
+        print(f"\n--- 第 {turn} 轮：模型思考 ---")
+
+        # 3. 调用大模型，传入完整对话历史获取响应
+        response = llm.invoke(messages)
+        # 将模型的AI回复追加到对话历史
+        messages.append(response)
+
+        # 4. 终止条件：模型没有发起工具调用，直接输出最终答案
+        if not response.tool_calls:
+            print("\n最终回答:")
+            print(response.content)
+            break
+
+        # 5. 解析模型的工具调用指令（示例仅处理第1个工具调用）
+        tool_call = response.tool_calls[0]
+        print("\n模型决定调用工具:")
+        print(f"tool_name = {tool_call['name']}")
+        print(f"tool_args = {tool_call['args']}")
+
+        # 6. 执行对应工具，获取工具执行结果
+        result = tool_map[tool_call["name"]].invoke(tool_call["args"])
+        print("\n工具返回:")
+        print(result)
+
+        # 7. 将工具结果以ToolMessage格式回填到对话历史，进入下一轮思考
+        messages.append(
+            ToolMessage(content=str(result), tool_call_id=tool_call["id"])
+        )
+
+```
+这是比较简单粗暴的方式实现react，langchain已经帮我们准备好了create_agent()方法，里面有封装好的react loop
+**Langchain实现方法：**
+![[Pasted image 20260715194611.png]]
+这是langchain里`create_agent()`函数，其实就是他给你封装好了一个 Agent 的构造器。Agent 需要的是 model、tools 和 system prompt 中间件，还有回复的格式化状态、上下文管理等内容。
+在Langchain里实现：
+```Python
+from langchain.agents import create_agent
+agnet = create_agent(
+	model=load_llm(),
+	tools=[list_files,move_file],
+	system_prompt=SYSTEM_PROMPT,
+	)
+result=agent.invoke({"message":[{"role":"user","content":task}]})
+```
 
 ReAct 模型虽然能完成任务，但存在明显缺陷：
-
 > **像一个急于表现的实习生**：代码写完看都不看就直接交给你，结果执行时处处报错。
 
 ReAct 模型只能**完成任务**，但**不看完成的结果**。这导致模型输出的代码或解决方案质量不可控。
@@ -329,16 +389,15 @@ ReAct 模型只能**完成任务**，但**不看完成的结果**。这导致模
 ![引入 Critic 节点后的 Reflection 循环](理论+代码从ToolCall到Harness、Claw.assets/2026-06-02-200035.png)
 
 工作流程：
-
 1. 模型完成任务后，**优先将结果输送给 Critic**
 2. Critic 拿原始任务和已完成信息进行对比
 3. Critic 判断：**打回给模型重新修改**，还是**直接输出**
 
 ---
 
-### 理论架构
+#### Reflection与 ReAct 的对比
+![[Pasted image 20260716002209.png]]
 
-#### 与 ReAct 的对比
 
 | 组件 | ReAct | Reflection |
 | --- | --- | --- |
