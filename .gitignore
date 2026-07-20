@@ -12,6 +12,7 @@ desktop.ini
 
 # Obsidian local state and cache
 .obsidian/workspace*.json
+.obsidian/plugins/github-contributions/
 .obsidian/cache/
 .obsidian/trash/
 
@@ -32,4 +33,3 @@ build/
 *.temp
 *.bak
 *.orig
-

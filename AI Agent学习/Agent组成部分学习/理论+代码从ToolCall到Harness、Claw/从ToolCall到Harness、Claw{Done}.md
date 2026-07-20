@@ -24,6 +24,7 @@
 
 #### 一、Agent 的本质
 > **核心观点**：Agent 的本质是**对模型输入和输出的文本进行操作**，所有后续处理都是基于这一原理。
+
 **第一性原理视角**：
 ```
 输入字符串 → LLM → 输出字符串
@@ -37,11 +38,11 @@
 ##### 2.1 问题起源
 2023 年 ChatGPT 发布时，模型存在明显局限：
 
-| 阶段 | 表现 | 问题 |
-| --- | --- | --- |
-| ChatGPT 时期 | 上知天文、下知地理 | 只能对话交流，无法实际操作 |
-| 询问实时问题 | "Sorry，无法获取实时数据" | 只是一个 "大号字典" |
-| 时效性问题 | 无法回答有实效性的问题 | 知识有截止日期 |
+| 阶段         | 表现               | 问题            |
+| ---------- | ---------------- | ------------- |
+| ChatGPT 时期 | 上知天文、下知地理        | 只能对话交流，无法实际操作 |
+| 询问实时问题     | "Sorry，无法获取实时数据" | 只是一个 "大号字典"   |
+| 时效性问题      | 无法回答有实效性的问题      | 知识有截止日期       |
 
 ##### 2.2 核心痛点
 > 模型只能交流，**不能与现实世界交互**。
@@ -757,28 +758,28 @@ result = graph.invoke(
 
 ### 面试题
 
-#### 1. 什么是 Reflection？它解决什么问题？
+1. 什么是 Reflection？它解决什么问题？
 
 Reflection（反思）是 Agent Loop 的经典范式，在 ReAct 的 "思考→行动→反馈" 循环基础上，引入一个 **Critic/Reviewer 节点**。它解决的问题是：ReAct 模型只负责完成任务，但不看完成的结果，导致输出质量不可控。Reflection 让模型在提交结果前先进行 "复盘"，由 Reviewer 判断是否需要打回重新修改。
 
-#### 2. Reflection 的工作流程是什么？
+2. Reflection 的工作流程是什么？
 
 ```
 Task → Think → Action → Observation → Critic → [打回 Think | 输出 End]
 ```
 
-1. 模型完成任务后，优先将结果输送给 Critic
-2. Critic 拿原始任务和已完成信息进行对比
-3. Critic 判断：打回给模型重新修改，还是直接输出
+- 模型完成任务后，优先将结果输送给 Critic
+- Critic 拿原始任务和已完成信息进行对比
+- Critic 判断：打回给模型重新修改，还是直接输出
 
-#### 3. LangGraph 编排的四步走是什么？
+3. LangGraph 编排的四步走是什么？
 
-1. **定义节点**：明确每个节点的职责是什么
-2. **加入节点**：将节点添加到 graph
-3. **编排边**：编辑节点间的信息流向
-4. **类型对齐**：确保发送和接收的数据类型一致（统一使用 state）
+- **定义节点**：明确每个节点的职责是什么
+- **加入节点**：将节点添加到 graph
+- **编排边**：编辑节点间的信息流向
+- **类型对齐**：确保发送和接收的数据类型一致（统一使用 state）
 
-#### 4. 如何用条件边实现 should_continue 逻辑？
+4. 如何用条件边实现 should_continue 逻辑？
 
 ```python
 def should_continue(state: AgentState) -> str:
@@ -790,7 +791,7 @@ def should_continue(state: AgentState) -> str:
 
 遍历消息队列，检查最后一条消息是否包含 `tool_calls` 属性：有则返回 "tools" 指向工具节点，无则返回 "END" 直接输出。
 
-#### 5. Reflection 在 LangGraph 中如何实现连边？
+5. Reflection 在 LangGraph 中如何实现连边？
 
 ```python
 # 1. start → agent
@@ -807,16 +808,16 @@ graph.add_edge("tools", "reflection")
 graph.add_edge("reflection", "agent")
 ```
 
-#### 6. 为什么需要设置最大循环次数？
+6. 为什么需要设置最大循环次数？
 
 防止 Agent 在 Reflection 判断逻辑出现偏差时进入无限循环。例如模型一直无法通过 Reviewer 的审核、或者 Reflection 给出的指引始终让模型继续执行，需要设置上限（如 12 次）来保护系统。
 
-#### 7. Agent Node 和 Tools Node 的职责分别是什么？
+7. Agent Node 和 Tools Node 的职责分别是什么？
 
 - **Agent Node**：接收用户任务，执行大模型推理，根据 system prompt 生成思考结果和工具调用指令
 - **Tools Node**：解析 Agent 输出的工具调用，执行具体工具逻辑，将执行结果添加到 state 并返回
 
-#### 8. ReAct 和 Reflection 的核心区别是什么？
+8. ReAct 和 Reflection 的核心区别是什么？
 
 | 维度 | ReAct | Reflection |
 | --- | --- | --- |
@@ -824,3 +825,263 @@ graph.add_edge("reflection", "agent")
 | 反馈机制 | 无 | 模型自检 |
 | 模型数量 | 1 个 | 2 个（agent + reviewer） |
 | 执行流程 | 单向循环 | 增加打回机制 |
+9. Reflection的缺点
+虽然Reflection可以完成一个任务可以反省自己，但是还存在致命的问题，模型出现幻觉和短视遗忘的问题，不能完成长程任务。
+## 第四部分 Plan&Excute
+> 先谋而后动，解决不能完成长程任务问题。
+
+![[Pasted image 20260720204728.png]]
+
+![[Pasted image 20260720204748.png]]
+
+![[Pasted image 20260720204818.png]]
+
+langgraph_plan_execute
+```python
+from __future__ import annotations
+import os
+import re
+import shutil
+import sys
+from pathlib import Path
+from typing import TypedDict
+
+from dotenv import load_dotenv
+from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage, ToolMessage
+from langchain_core.tools import tool
+from langchain_openai import ChatOpenAI
+from langgraph.graph import END, START, StateGraph
+
+
+# -------------------------- 基础配置 --------------------------
+DEFAULT_TASK = "请检查 inbox，把 a.txt 移动到 archive，然后告诉我整理后的目录变化。"
+WORKSPACE = Path(__file__).resolve().parent / "demo_workspace"
+
+
+# -------------------------- 状态定义 --------------------------
+#plan和task是planning新增的状态
+class AgentState(TypedDict):
+    task: str
+    plan: list[str]
+    messages: list[BaseMessage]
+    reflection: str
+
+
+# -------------------------- 工具与辅助函数 --------------------------
+def show_workspace() -> str:
+    """打印工作区目录树，用于运行前后对比"""
+    def _build_tree(path: Path, prefix: str = "") -> str:
+        lines = []
+        entries = sorted(path.iterdir(), key=lambda p: (p.is_file(), p.name))
+        for idx, entry in enumerate(entries):
+            connector = "├── " if idx < len(entries) - 1 else "└── "
+            lines.append(f"{prefix}{connector}{entry.name}")
+            if entry.is_dir():
+                extension = "│   " if idx < len(entries) - 1 else "    "
+                lines.append(_build_tree(entry, prefix + extension))
+        return "\n".join(lines)
+
+    if not WORKSPACE.exists():
+        return "工作区目录不存在"
+    return f"{WORKSPACE.name}\n{_build_tree(WORKSPACE)}"
+
+
+@tool
+def list_files(dir_path: str = ".") -> str:
+    """列出工作区下指定目录的文件列表，dir_path为相对工作区的路径"""
+    target_dir = WORKSPACE / dir_path
+    if not target_dir.exists():
+        return f"错误：目录 {dir_path} 不存在"
+    if not target_dir.is_dir():
+        return f"错误：{dir_path} 不是目录"
+    
+    items = [p.name for p in sorted(target_dir.iterdir())]
+    return f"目录 [{dir_path}] 内容：\n" + "\n".join(items)
+
+
+@tool
+def move_file(src: str, dst: str) -> str:
+    """移动文件，src 和 dst 均为相对于工作区的路径"""
+    src_path = WORKSPACE / src
+    dst_path = WORKSPACE / dst
+
+    if not src_path.exists():
+        return f"错误：源文件 {src} 不存在"
+    if not src_path.is_file():
+        return f"错误：{src} 不是文件"
+
+    # 自动创建目标目录
+    dst_path.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(src_path), str(dst_path))
+    return f"执行成功：已将 {src} 移动到 {dst}"
+
+#相对于reflection新增的解析计划
+def parse_plan(content: str) -> list[str]:
+    """解析大模型生成的计划文本，拆分为步骤列表"""
+    steps = []
+    for line in content.strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        # 去除行首的序号（如 1.、1、）
+        line = re.sub(r"^\d+[.、]\s*", "", line)
+        if line:
+            steps.append(line)
+    # 兜底默认计划
+    return steps or ["检查 inbox", "移动 a.txt 到 archive", "查看整理后的目录"]
+
+
+# -------------------------- Prompt 定义 -------------------------
+#相较于reflection新增了一个LLM所以需要新增一个提示词
+PLANNER_PROMPT = """
+把用户任务拆成 3 个步骤。
+必须覆盖：检查 inbox、移动 a.txt 到 archive、查看整理后的目录。
+每行一个步骤，不要写额外解释。
+""".strip()
+
+SYSTEM_PROMPT = """
+你是一个 ReAct executor。
+你会收到计划，请按计划用工具一步步完成任务。
+每一轮最多调用一个工具。
+如果有 reflection note，请优先参考它决定下一步。
+""".strip()
+
+REFLECTION_PROMPT = """
+你是 reviewer。根据计划和最近工具结果，给 executor 一句下一步建议。
+如果已经看到 archive/a.txt，请提醒 executor 停止调用工具并总结。
+只输出一句 reflection note。
+""".strip()
+
+
+# -------------------------- LLM 初始化 --------------------------
+def load_llm() -> ChatOpenAI:
+    """加载 OpenAI 大模型，自动读取 .env 中的 API Key"""
+    load_dotenv()
+    return ChatOpenAI(
+        model="gpt-3.5-turbo",
+        temperature=0,
+    )
+
+
+# -------------------------- 主函数与图构建 -----------------------
+def main() -> None:
+    task = DEFAULT_TASK
+    print("用户任务：")
+    print(task)
+    print("\n运行前 workspace:")
+    print(show_workspace())
+
+    # 初始化工具与模型
+    tools = [list_files, move_file]
+    tool_map = {item.name: item for item in tools}
+    base_llm = load_llm()
+    tool_llm = base_llm.bind_tools(tools)
+
+    # ----------------------- 节点1：规划节点 ---------------------
+    #在提示词进入planner_node后得到回复，把回复解析成parse_plan传入plan
+    def planner_node(state: AgentState) -> AgentState:
+        print("\n[planner] 生成计划")
+        response = base_llm.invoke(
+	        [SystemMessage(content=PLANNER_PROMPT),
+	        HumanMessage(content=state["task"])]
+        )
+        
+        plan = parse_plan(str(response.content))
+        
+        # 打印计划
+        for index, step in enumerate(plan, start=1):
+            print(f"{index}. {step}")
+            
+        # 格式化计划文本存入消息
+        plan_text = "\n".join(f"{index}. {step}" for index, step in enumerate(plan, start=1))
+        #把解析出来的计划存到state中，这时state中就会包含plan和message两段提示词
+        return {
+            **state,
+            "plan": plan,
+            "messages": [HumanMessage(content=f"用户任务: {state['task']}\n\n计划:\n{plan_text}")],
+        }
+
+    # ---------- 节点2：执行代理节点 ----------
+    def agent_node(state: AgentState) -> AgentState:
+        print("\n[agent] 按计划执行下一步")
+        prompt = SYSTEM_PROMPT
+        # 拼接反思建议
+        if state["reflection"]:
+            prompt += f"\n\nReflection note：{state['reflection']}"
+        # 调用带工具绑定的大模型
+        response = tool_llm.invoke([SystemMessage(content=prompt), *state["messages"]])
+        return {**state, "messages": [*state["messages"], response]}
+
+    # ---------- 节点3：工具执行节点 ----------
+    def tools_node(state: AgentState) -> AgentState:
+        response = state["messages"][-1]
+        new_messages = list(state["messages"])
+
+        for tool_call in response.tool_calls:
+            print("\n[tools] 执行工具")
+            print(f"tool_name = {tool_call['name']}")
+            # 调用对应工具
+            tool_func = tool_map[tool_call["name"]]
+            tool_result = tool_func.invoke(tool_call["args"])
+            # 构造工具返回消息
+            new_messages.append(ToolMessage(
+                content=str(tool_result),
+                tool_call_id=tool_call["id"],
+                name=tool_call["name"]
+            ))
+
+        return {**state, "messages": new_messages}
+
+    # ---------- 节点4：反思节点 ----------
+    def reflection_node(state: AgentState) -> AgentState:
+        print("\n[reflection] 复盘反思")
+        plan_text = "\n".join(f"{i+1}. {step}" for i, step in enumerate(state["plan"]))
+        # 取最近的执行记录，避免上下文过长
+        recent_msgs = state["messages"][-5:]
+        history_text = "\n".join(f"[{m.type}]: {m.content}" for m in recent_msgs)
+        
+        response = base_llm.invoke([
+            SystemMessage(content=REFLECTION_PROMPT),
+            HumanMessage(content=f"整体计划：\n{plan_text}\n\n执行历史：\n{history_text}")
+        ])
+        note = response.content.strip()
+        print(f"反思建议：{note}")
+        return {**state, "reflection": note}
+
+    # ---------- 条件边：判断是否继续调用工具 ----------
+    def should_continue(state: AgentState) -> str:
+        last_message = state["messages"][-1]
+        # 最后一条消息有工具调用则进入工具节点，否则结束
+        return "tools" if getattr(last_message, "tool_calls", None) else END
+
+    # ---------- 构建状态图 ----------
+    graph = StateGraph(AgentState)
+    graph.add_node("planner", planner_node)
+    graph.add_node("agent", agent_node)
+    graph.add_node("tools", tools_node)
+    graph.add_node("reflection", reflection_node)
+
+    # 定义边与流转逻辑
+    graph.add_edge(START, "planner")
+    graph.add_edge("planner", "agent")
+    graph.add_conditional_edges("agent", should_continue)
+    graph.add_edge("tools", "reflection")
+    graph.add_edge("reflection", "agent")
+
+    # 编译并运行
+    result = graph.compile().invoke(
+        {"task": task, "plan": [], "messages": [], "reflection": ""},
+        config={"recursion_limit": 50},
+    )
+
+    # 输出最终结果
+    print("\n最终回答:")
+    print(result["messages"][-1].content)
+    print("\n运行后 workspace:")
+    print(show_workspace())
+
+
+if __name__ == "__main__":
+    main()
+
+```

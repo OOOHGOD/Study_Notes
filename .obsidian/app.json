@@ -3,5 +3,8 @@
   "spellcheck": false,
   "attachmentFolderPath": "./附件",
   "showUnsupportedFiles": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": true,
+  "smartIndentList": false,
+  "tabSize": 2
 }

@@ -1,6 +1,6 @@
 {
   "lastVersion": "4.0.9",
-  "aestheticStyle": "default",
+  "aestheticStyle": "tiny",
   "positionStyle": "top",
   "menuCommands": [
     {
@@ -392,6 +392,24 @@
       "id": "editing-toolbar:workplace-fullscreen-focus",
       "name": "Workplace Fullscreen",
       "icon": "exit-fullscreen"
+    },
+    {
+      "id": "editor:toggle-checklist-status",
+      "name": "切换待办事项状态",
+      "icon": "lucide-check-square",
+      "hotkeys": [
+        {
+          "modifiers": [
+            "Mod"
+          ],
+          "key": "l"
+        }
+      ]
+    },
+    {
+      "id": "editor:cycle-list-checklist",
+      "name": "切换列表/待办事项",
+      "icon": "lucide-check-square"
     }
   ],
   "followingCommands": [
@@ -457,7 +475,7 @@
       "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
       "toolbarIconColor": "var(--text-normal)",
       "toolbarIconSize": 18,
-      "aestheticStyle": "default"
+      "aestheticStyle": "tiny"
     },
     "following": {
       "toolbarBackgroundColor": "rgba(var(--background-secondary-rgb), 0.7)",
