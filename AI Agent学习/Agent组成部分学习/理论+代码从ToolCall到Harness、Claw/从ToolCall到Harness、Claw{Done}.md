@@ -1327,11 +1327,11 @@ WORKSPACE = Path(__file__).resolve().parent / "demo_workspace"
 
 # 定义 MultiAgent 系统的全局状态结构，所有节点共享该状态进行信息传递
 class MultiAgentState(TypedDict):
-    task: str               # 用户输入的原始任务
-    next_agent: str         # supervisor 决策出的下一个要执行的智能体标识
-    file_report: str        # 文件处理智能体的执行结果报告
-    code_report: str        # 代码生成智能体的执行结果报告
-    final_answer: str       # 所有任务完成后，supervisor 生成的最终总结答案
+    task: str             # 用户输入的原始任务
+    next_agent: str       # supervisor 决策出的下一个要执行的智能体标识
+    file_report: str      # 文件处理智能体的执行结果报告
+    code_report: str      # 代码生成智能体的执行结果报告
+    final_answer: str  # 所有任务完成后，supervisor 生成的最终总结答案
 
 
 # 重置演示工作目录，保证每次运行都从相同的初始状态开始
