@@ -10,7 +10,7 @@
 
 - [AI Agent 学习总目录](./AI%20Agent学习/)
 - [Agent 学习路径](./AI%20Agent学习/Agent组成部分学习/Agent学习路径.md)：从 LLM 应用基础、Tool Calling、Agent Loop 到评估、MCP、Skills 与多 Agent
-- [Function Call](./AI%20Agent学习/Agent组成部分学习/Function%20Call.md)、[MCP](./AI%20Agent学习/Agent组成部分学习/MCP.md) 与 [RAG](./AI%20Agent学习/Agent组成部分学习/RAG.md)
+- [Function Call](./AI%20Agent学习/Agent组成部分学习/Function%20Call.md)、[MCP](./AI%20Agent学习/Agent组成部分学习/MCP.md) 与 [RAG](RAG.md)
 - [Happy-LLM 学习笔记](./AI%20Agent学习/Happy-LLM/)：NLP、Transformer、预训练模型、大模型训练与应用
 - [LangChain、LangGraph 与 LangSmith](./AI%20Agent学习/LangChain%26LangGraph%26LangSmith/LangChain%26LangGraph.md)
 

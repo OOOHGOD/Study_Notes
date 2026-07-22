@@ -522,8 +522,21 @@
       "artifact": "03-agent"
     },
     "pkmer": {
-      "tokenExpiresAt": 0,
-      "userInfo": null
+      "tokenExpiresAt": 1784739484209,
+      "userInfo": {
+        "sub": "3ebe4aaa-b7d9-4911-b5c5-440e1d2a431b",
+        "name": "19120019745",
+        "email": "1834391555ldc@gmail.com",
+        "ai_quota": {
+          "quota": 50000000,
+          "usedQuota": 0,
+          "remainingQuota": 50000000,
+          "remainingTokens": 100,
+          "requestCount": 0
+        },
+        "thino": false,
+        "supporter": false
+      }
     },
     "enableCustomModel": false,
     "customModel": {
