@@ -95,7 +95,7 @@ LLM 应用基础
 
 #### 使用现有笔记
 
-- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw{Done}.md>)：重点学习 ToolCall 原理、手写协议、LangChain 实现和 Agent Loop。
+- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw.md>)：重点学习 ToolCall 原理、手写协议、LangChain 实现和 Agent Loop。
 - [大模型 Agent 知识从 0-1](<./大模型Agent知识从0-1笔记-万字详解版本！/大模型Agent知识从0-1笔记-万字详解版本！.md>)：阅读 Agent 架构、Tools、ReAct、无限循环和错误处理部分。
 
 #### 动手任务
@@ -128,7 +128,7 @@ LLM 应用基础
 
 - [订单工作流资料总索引](<../AI工作流教学 以订单识别为例/00-课程总索引.md>)：重点复习角色、主流程、分支、停止条件、审批与异常。
 - [订单自动识别工作流制作教程](<../AI工作流教学 以订单识别为例/订单自动识别工作流制作教程.md>)：把业务流程映射为可执行状态图。
-- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw{Done}.md>)：学习 LangGraph 编排和条件边。
+- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw.md>)：学习 LangGraph 编排和条件边。
 
 #### 动手任务
 
@@ -210,7 +210,7 @@ LLM 应用基础
 
 #### 使用现有笔记
 
-- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw{Done}.md>)：复习 Reflection、Reviewer 和循环保护。
+- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw.md>)：复习 Reflection、Reviewer 和循环保护。
 - [大模型 Agent 知识从 0-1](<./大模型Agent知识从0-1笔记-万字详解版本！/大模型Agent知识从0-1笔记-万字详解版本！.md>)：复习工具误选、卡死、鲁棒性、成本控制。
 
 #### 动手任务
@@ -239,7 +239,7 @@ LLM 应用基础
 
 #### 使用现有笔记
 
-- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw{Done}.md>)。
+- [理论 + 代码：从 ToolCall 到 Harness、Claw](<从ToolCall到Harness、Claw.md>)。
 - [Superpowers Skill 笔记](<./Skill/Superpowers is an agentic skills framework/Superpowers  skill.md>)。
 - [Harness 实践：知识点讲解“视频”网页](<./Skill/Harness 实践：让 Agent 全自动制作知识讲解视频/让Agent 全自动制作知识点讲解“视频”网页.md>)。
 
