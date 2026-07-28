@@ -306,7 +306,7 @@ ToolCall（工具调用）的本质是让大模型能够识别并执行外部函
 
 ---
 
-## 第三部分：ReAct/Reflection 理论与代码
+## 第三部分：ReAct/Reflection架构 理论与代码
 
 > 实现了FountionCalling模型能够完成单一的“动作“，但是无法完成一个”任务“。于是提出了：ReAct最经典的Loop范式，
 
@@ -827,7 +827,8 @@ graph.add_edge("reflection", "agent")
 | 执行流程 | 单向循环 | 增加打回机制 |
 9. Reflection的缺点
 虽然Reflection可以完成一个任务可以反省自己，但是还存在致命的问题，模型出现幻觉和短视遗忘的问题，不能完成长程任务。
-## 第四部分 Plan&Excute
+## 第四部分 Agent 架构设计
+### **Plan&Excute架构**
 > 先谋而后动，解决不能完成长程任务问题。
 
 ![[Pasted image 20260720204728.png]]
@@ -1086,7 +1087,7 @@ if __name__ == "__main__":
 
 ```
 
-## 第五部分 MultAgent
+### MultAgent架构
 > 众人拾柴火焰高
 
 Multi agent还需要考虑模型的路由，因为有些Agent它并不需要有很强的模型
@@ -1707,3 +1708,7 @@ context engineer四大思想
 | 遇到报错 |                                                                                          |                                                                                                          |
 | 完成阶段 |                                                                                          |                                                                                                          |
 |      |                                                                                          |                                                                                                          |
+## 第六部分项目实现VibeCoding
+> vibecoding时代很多代码不用自己去敲，这里主要讲解vibe思路
+
+
