@@ -5,7 +5,6 @@
 > 本仓库同时也是一个 [Obsidian](https://obsidian.md/) Vault。内容以 Markdown 为主，可以直接在 GitHub 阅读，也可以克隆到本地后使用 Obsidian 打开。
 
 ![[9db422e4-1f26-4acb-b531-ca89b078e82d.jpg]]
-
 ## 学习地图
 
 | 方向 | 主要内容 | 快速入口 |
