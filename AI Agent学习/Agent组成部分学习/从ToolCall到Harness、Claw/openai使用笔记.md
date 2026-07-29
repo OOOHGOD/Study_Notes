@@ -1,0 +1,423 @@
+---
+title: OpenAI 使用笔记
+summary: "记录 LeoClaw ReAct Agent 的运行方式、OpenAI API 配置、模型查询和模型类型。"
+tags:
+  - OpenAI
+  - API
+  - LangChain
+  - ReAct-Agent
+  - Tool-Calling
+created: 2026-07-29
+category: "AI Agent"
+---
+
+# OpenAI 使用笔记
+
+> 本笔记记录 LeoClaw ReAct Agent 项目的运行方法、OpenAI API Key 配置、模型查询与模型类型说明。
+
+## 1. LeoClaw 是什么
+
+LeoClaw 是一个使用 Python、Typer、LangChain 和 `langchain-openai` 实现的 ReAct 风格命令行 Agent。
+
+这里的 **ReAct** 指 Agent 的“推理 + 行动”工作模式，不是用于开发网页的 React 框架，因此不需要安装 Node.js、npm 或启动 Web 服务器。
+
+它的基本工作流程是：
+
+1. 用户通过 CLI 输入任务。
+2. `ChatOpenAI` 把任务发送给 OpenAI 模型。
+3. 模型判断是否需要调用工具。
+4. LeoClaw 执行文件读取、写入、编辑、Grep 或 Bash 工具。
+5. 工具结果返回给模型。
+6. 模型继续判断或给出最终答案。
+
+## 2. 项目如何使用 LangChain
+
+项目主要在以下位置使用 LangChain：
+
+- `src/leoclaw/tools/registry.py`
+  - 使用 `langchain_core.tools.StructuredTool`。
+  - 把普通 Python 方法包装成模型可以识别和调用的工具。
+- `src/leoclaw/cli/app.py`
+  - 使用 `HumanMessage`、`SystemMessage`、`ToolMessage`。
+  - 使用 `model.bind_tools(tools)` 把工具注册给模型。
+- `src/leoclaw/providers/openai_provider.py`
+  - 使用 `langchain_openai.ChatOpenAI` 创建模型对象。
+
+### StructuredTool 是什么
+
+`StructuredTool` 可以理解为给普通 Python 函数增加一份“工具说明书”，告诉模型：
+
+- 工具叫什么名字；
+- 工具是做什么的；
+- 需要传入哪些参数；
+- 参数分别是什么类型。
+
+LeoClaw 注册了 5 个工具：
+
+1. `file_read`：读取工作区文件。
+2. `file_write`：创建或覆盖文件。
+3. `file_edit`：唯一文本替换。
+4. `grep`：正则搜索。
+5. `bash`：在工作区内执行命令并控制超时。
+
+## 3. tests 文件夹是什么
+
+`tests` 是自动化测试目录，不属于 LeoClaw 的正式运行代码。
+
+- `tests/test_tools.py`
+  - 检查路径越界保护；
+  - 检查文件读写；
+  - 检查唯一文本替换；
+  - 检查正则搜索；
+  - 检查 Bash 超时。
+- `tests/test_registry.py`
+  - 检查 5 个 `StructuredTool` 是否正确注册。
+
+运行测试：
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest
+```
+
+删除 `tests` 后 CLI 仍可运行，但会失去自动验证功能，因此开发期间建议保留。
+
+## 4. 运行环境与依赖
+
+### 必需环境
+
+- Windows、Linux 或 macOS；
+- Python 3.10 或更高版本；
+- `pip`；
+- 可访问 OpenAI API 的网络；
+- OpenAI API Key。
+
+### Python 依赖
+
+- `langchain-core`
+- `langchain-openai`
+- `typer`
+- `rich`
+- `python-dotenv`
+- `pytest`（仅测试需要）
+- `hatchling`（构建项目时使用）
+
+### 初次安装
+
+```powershell
+cd D:\BaiduSyncdisk\Couresware\Workspace\ReAct_Agent
+
+python -m venv .venv
+
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
+```
+
+项目已经存在 `.venv` 时不需要重复安装。
+
+## 5. 配置 OpenAI API Key
+
+### 5.1 创建 `.env`
+
+进入项目目录：
+
+```powershell
+cd D:\BaiduSyncdisk\Couresware\Workspace\ReAct_Agent
+```
+
+复制配置模板：
+
+```powershell
+Copy-Item .env.example .env
+```
+
+使用记事本打开：
+
+```powershell
+notepad .env
+```
+
+填写：
+
+```dotenv
+OPENAI_API_KEY=sk-你的真实密钥
+OPENAI_MODEL=gpt-5.6-terra
+```
+
+说明：
+
+- `OPENAI_API_KEY` 是程序访问 OpenAI API 的凭证。
+- `OPENAI_MODEL` 是 LeoClaw 调用的模型。
+- 等号两侧不要添加空格。
+- 不要把真实 API Key 发到聊天、截图或代码仓库中。
+- `.env` 应当被 `.gitignore` 忽略。
+
+### 5.2 安全验证配置
+
+下面的命令只显示是否读取成功，不显示真实密钥：
+
+```powershell
+.\.venv\Scripts\python.exe -c "from dotenv import load_dotenv; load_dotenv(); import os; print('API Key 已读取:', bool(os.getenv('OPENAI_API_KEY'))); print('模型:', os.getenv('OPENAI_MODEL'))"
+```
+
+正常结果示例：
+
+```text
+API Key 已读取: True
+模型: gpt-5.6-terra
+```
+
+检查 `.env` 是否被 Git 忽略：
+
+```powershell
+git check-ignore .env
+```
+
+如果输出 `.env`，说明忽略规则已经生效。
+
+## 6. 运行 LeoClaw
+
+查看帮助：
+
+```powershell
+.\.venv\Scripts\leoclaw.exe --help
+```
+
+运行任务：
+
+```powershell
+.\.venv\Scripts\leoclaw.exe "创建一个 hello.py，运行后输出 Hello LeoClaw" --workspace .\demo
+```
+
+参数说明：
+
+- 引号内是交给 Agent 的任务。
+- `--workspace .\demo` 把文件操作目标设置为 `demo` 文件夹。
+- 工作区不存在时会自动创建。
+- 不指定 `--workspace` 时，默认使用 `.leoclaw-workspace`。
+
+查看生成结果：
+
+```powershell
+Get-ChildItem .\demo
+Get-Content .\demo\hello.py
+```
+
+真正运行 Agent 会调用 OpenAI API，并可能产生费用；执行 `--help` 和本地 `pytest` 不会生成模型回答。
+
+## 7. 查看 API Key 可见的模型
+
+运行：
+
+```powershell
+.\.venv\Scripts\python.exe -c "from dotenv import load_dotenv; load_dotenv(); from openai import OpenAI; client=OpenAI(); print('\n'.join(sorted(model.id for model in client.models.list().data)))"
+```
+
+这条命令会：
+
+1. 从 `.env` 读取 API Key；
+2. 请求 OpenAI 的模型列表接口；
+3. 打印当前项目可见的模型 ID；
+4. 不打印真实 API Key。
+
+本次查询已经确认以下三个模型对当前 API 项目可见：
+
+```text
+gpt-5.6-sol
+gpt-5.6-terra
+gpt-5.6-luna
+```
+
+注意：模型出现在列表中，表示它对当前 API 项目可见；实际调用还可能受到余额、模型端点、速率限制和账户等级影响。
+
+## 8. 模型列表为什么这么长
+
+模型接口返回的是完整模型目录，并不全是聊天大模型。
+
+### 8.1 文字、推理与 Agent 模型
+
+示例：
+
+```text
+gpt-5
+gpt-5.4
+gpt-5.5
+gpt-5.6-sol
+gpt-5.6-terra
+gpt-5.6-luna
+gpt-4.1
+gpt-4o
+o1
+o3
+```
+
+这类模型可用于对话、代码、推理和工具调用。LeoClaw 应从支持函数调用的这一类模型中选择。
+
+### 8.2 Codex 编程模型
+
+示例：
+
+```text
+gpt-5-codex
+gpt-5.1-codex
+gpt-5.2-codex
+gpt-5.3-codex
+```
+
+它们也是语言模型，但更偏向代码生成、代码库分析和长时间编程任务。是否能直接用于 LeoClaw，还要确认模型支持当前使用的 API 端点和函数调用方式。
+
+### 8.3 图片模型
+
+示例：
+
+```text
+gpt-image-1
+gpt-image-1.5
+gpt-image-2
+chatgpt-image-latest
+```
+
+用于生成或编辑图片，不能直接替换 LeoClaw 的聊天模型。
+
+### 8.4 语音与实时模型
+
+示例：
+
+```text
+gpt-realtime-2
+gpt-realtime-2.1
+gpt-audio-1.5
+gpt-transcribe
+gpt-4o-transcribe
+gpt-4o-mini-tts
+whisper-1
+tts-1
+```
+
+- `realtime`：实时语音或多模态交互；
+- `transcribe`、`whisper`：语音转文字；
+- `tts`：文字转语音；
+- `audio`：处理音频输入和输出。
+
+### 8.5 Embedding 模型
+
+示例：
+
+```text
+text-embedding-3-large
+text-embedding-3-small
+text-embedding-ada-002
+```
+
+它们把文本转换成向量，常用于 RAG、语义搜索、相似度计算和推荐系统，不会像 ChatGPT 一样直接回答问题。
+
+### 8.6 视频模型
+
+示例：
+
+```text
+sora-2
+sora-2-pro
+```
+
+用于视频生成。
+
+### 8.7 内容审核模型
+
+示例：
+
+```text
+omni-moderation-latest
+omni-moderation-2024-09-26
+```
+
+用于识别违规或有害内容，不是聊天模型。
+
+### 8.8 旧模型和历史版本
+
+示例：
+
+```text
+babbage-002
+davinci-002
+gpt-3.5-turbo
+```
+
+这些是较旧或兼容性用途的模型，新项目通常不需要优先选择。
+
+## 9. 模型名称中的版本是什么意思
+
+例如：
+
+```text
+gpt-5.4
+gpt-5.4-2026-03-05
+```
+
+- 不带日期的名称通常是模型别名，背后版本可能由平台更新。
+- 带日期的名称通常是固定快照，更适合需要稳定行为和回归测试的项目。
+
+常见后缀含义：
+
+- `mini`、`nano`、`luna`：通常更偏速度和成本。
+- `pro`、`sol`：通常更偏能力和复杂任务。
+- `codex`：偏向编程和代码 Agent。
+- `transcribe`：语音转文字。
+- `tts`：文字转语音。
+- `realtime`：实时交互。
+
+## 10. LeoClaw 模型选择
+
+| 模型 | 特点 | 适合场景 |
+|---|---|---|
+| `gpt-5.6-sol` | 能力优先 | 复杂编程、高质量任务 |
+| `gpt-5.6-terra` | 能力与成本平衡 | 日常开发、入门使用 |
+| `gpt-5.6-luna` | 成本和吞吐优先 | 简单任务、连接测试 |
+
+刚开始学习和调试 LeoClaw 时，可以使用：
+
+```dotenv
+OPENAI_MODEL=gpt-5.6-terra
+```
+
+如需更强能力再切换为：
+
+```dotenv
+OPENAI_MODEL=gpt-5.6-sol
+```
+
+只想低成本测试流程时，可以使用：
+
+```dotenv
+OPENAI_MODEL=gpt-5.6-luna
+```
+
+修改 `.env` 后，下次启动 LeoClaw 会读取新的模型名称。
+
+## 11. 常见错误
+
+### `401 Incorrect API key`
+
+API Key 错误、失效或复制不完整。
+
+### `429 insufficient_quota`
+
+账户没有可用 API 额度、未配置 API 账单，或触发了用量限制。
+
+### `model_not_found`
+
+模型名称错误，或者当前 API 项目没有对应模型权限。
+
+### `API Key 已读取: False`
+
+`.env` 不存在、不在项目根目录、变量名错误或等号后没有填写内容。
+
+### `Connection error`
+
+本机网络无法连接 OpenAI API。
+
+## 12. 官方参考
+
+- [OpenAI API Key 页面](https://platform.openai.com/api-keys)
+- [API Key 安全最佳实践](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safet)
+- [OpenAI 模型目录](https://developers.openai.com/api/docs/models/all)
+- [OpenAI 模型列表 API](https://platform.openai.com/docs/api-reference/models/object?lang=curl)
+- [OpenAI 模型对比](https://developers.openai.com/api/docs/models/compare)

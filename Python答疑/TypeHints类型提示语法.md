@@ -1,3 +1,14 @@
+---
+title: "Python Type Hints 类型提示语法"
+summary: "介绍 Python 函数参数和返回值类型注解的基本语法与使用方式。"
+tags:
+  - "Python"
+  - "Type-Hints"
+  - "类型注解"
+created:
+category: "Python"
+---
+
 --- 
 # Python 函数类型注解：def 函数名 (参数名：参数类型) -> 返回值类型
 

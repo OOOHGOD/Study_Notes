@@ -1,3 +1,13 @@
+---
+title: "AI Agent 学习路径"
+summary: "一条从基础知识到设计、实现、评测和部署可靠 Agent 系统的阶段化学习路线。"
+tags:
+  - "AI-Agent"
+  - "学习路径"
+  - "Agent-Engineering"
+created:
+category: "AI Agent"
+---
 
 > 目标：不是只记住 Agent 的组件名，而是能够独立设计、实现、评测并部署一个**可控、可靠、可观测**的 Agent 系统。
 >

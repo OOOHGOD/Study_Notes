@@ -1,3 +1,14 @@
+---
+title: "让 Agent 全自动制作知识点讲解视频网页"
+summary: "记录利用 Harness 将技术文档转成口播、开发计划、动态网页和最终视频的自动化制作流程。"
+tags:
+  - "AI-Agent"
+  - "Harness"
+  - "视频自动化"
+  - "Web"
+created:
+category: "AI Agent"
+---
 
 ```
 参考视频：

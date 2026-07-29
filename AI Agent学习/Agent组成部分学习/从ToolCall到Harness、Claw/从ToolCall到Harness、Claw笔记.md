@@ -1,3 +1,14 @@
+---
+title: 从 ToolCall 到 Harness、Claw
+summary: 从 Tool Calling 的原理和代码实现出发，逐步延伸到 Agent Loop、Reflection、Harness 与 Claw。
+tags:
+  - AI-Agent
+  - Tool-Calling
+  - Harness
+  - Agent-Loop
+created: 2026-07-29
+category: AI Agent
+---
 
 > 系列学习笔记：从 ToolCall 的底层原理与代码实现，延伸到 Agent Loop 中的 Reflection 范式。
 

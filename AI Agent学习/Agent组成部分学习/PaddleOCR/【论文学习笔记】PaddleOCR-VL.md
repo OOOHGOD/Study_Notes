@@ -1,3 +1,15 @@
+---
+title: "PaddleOCR-VL 论文学习笔记"
+summary: "梳理 PaddleOCR-VL-1.6 针对输出稳定性、稀有场景和标签噪声所做的训练改进。"
+tags:
+  - "PaddleOCR"
+  - "OCR"
+  - "视觉语言模型"
+  - "论文笔记"
+created:
+category: "AI Agent"
+---
+
 【论文学习】PaddleOCR-VL-1.6：Expanding the Frontier of Document Parsing with Under-Optimized Region Refinement and Progressive Post-Training
 > 团队：百度 PaddlePaddle，基于VL-1.5的基础上发现了三点不足，1. 稍微扰动就输出不稳定；2. 某些稀有场景数据太少；3. 原训练标签本身有噪声。针对这些弱点继续预训练、监督微调、强化学习最终输出VL-1.6
 

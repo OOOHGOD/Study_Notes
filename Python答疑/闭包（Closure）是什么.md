@@ -1,3 +1,14 @@
+---
+title: "闭包（Closure）是什么"
+summary: "通过 LeoClaw 工具注册代码解释闭包如何捕获外部状态，以及它在工具调用中的作用。"
+tags:
+  - "Python"
+  - "闭包"
+  - "函数"
+created:
+category: "Python"
+---
+
 闭包 = **一个函数 + 它捕获的外部变量**。
 看 [src/mokioclaw/tools/registry.py:13-17](vscode-webview://1b6lteju7dn47fm8eqapiqp08jpv7thsufa4ris5cq7eqo2holgk/src/mokioclaw/tools/registry.py#L13-L17)：
 ```python
