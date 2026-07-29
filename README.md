@@ -3,6 +3,7 @@
 一个持续更新的个人学习知识库，记录 AI Agent、大语言模型、Python、AI 开发工具与机器人项目的学习笔记、实践过程和阶段性复盘。
 
 > 本仓库同时也是一个 [Obsidian](https://obsidian.md/) Vault。内容以 Markdown 为主，可以直接在 GitHub 阅读，也可以克隆到本地后使用 Obsidian 打开。
+
 ![[9db422e4-1f26-4acb-b531-ca89b078e82d.jpg]]
 
 ## 学习地图
