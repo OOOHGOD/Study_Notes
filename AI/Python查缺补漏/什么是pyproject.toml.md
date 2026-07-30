@@ -190,6 +190,14 @@ testpaths = [
 ## UV和conda的区别
 ![[Pasted image 20260731013816.png]]
 ### **总结**
-![[Pasted image 20260731014023.png]]
+
+
+|             | UV              | Conda            |
+| ----------- | --------------- | ---------------- |
+| 速度          | ⚡ 极快            | 慢                |
+| 生态          | PyPI（Python 优先） | conda-forge（跨语言） |
+| 非 Python 依赖 | ❌               | ✅                |
+| CUDA/MKL 优化 | 依赖系统            | 内置支持             |
+| 适合你吗？       | ✅ 大多数 AI/仿真项目   | 仅当需要 conda 特供包   |
 
 > 🚀 趋势：随着 uv、pixi（conda 的 Rust 替代品）等工具出现，纯 Python 项目正快速转向 uv，而 conda 仍主导科学计算重依赖场景。
