@@ -61,7 +61,7 @@ LLM 基础 → Python 与 API → Tool Calling → Agent Loop
 - [ElectronBot 实际使用问题](./项目/ElectroBot/ElectronBot%20学习笔记/实际使用中会遇到的问题.md)：机器人调试与使用记录
 - [Codex 动画宠物](./项目/pet-runs/)：生成记录、提示词、素材和质量检查资料
 - `项目/文言文学习软件/`：文言文学习应用的探索项目
-- [待办事项](./A%20Todo%20List.md)：后续学习主题与项目想法
+- [待办事项](Todo%20List.md)：后续学习主题与项目想法
 
 ## 仓库结构
 
