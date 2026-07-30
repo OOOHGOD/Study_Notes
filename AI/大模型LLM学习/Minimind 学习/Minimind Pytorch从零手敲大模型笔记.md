@@ -1,3 +1,14 @@
+---
+title: "MiniMind：PyTorch 从零手敲大模型笔记"
+summary: "整理学习 MiniMind 前所需的 Python、uv、PyTorch、数学与 Transformer 基础，并记录核心概念问题。"
+tags:
+  - "MiniMind"
+  - "PyTorch"
+  - "大语言模型"
+  - "Transformer"
+created: 2026-07-31
+category: "大语言模型"
+---
 
 > [!前置基础知识]
 > 
