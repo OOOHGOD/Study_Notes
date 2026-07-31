@@ -28,9 +28,24 @@ category: "大语言模型"
 > - [ ] [! jingyaogong/minimind: 🧠「大模型」2小时完全从0训练64M的小参数LLM！Train a 64M-parameter LLM from scratch in just 2h!](https://github.com/jingyaogong/minimind#)
 > 
 
+**神经网络是什么？**
+`类似于function函数->拟合函数->world is a function->拟合世界`
+**Attention是什么？**（看3b1b）
+`模型处理序列文本时，动态计算每个 token 之间的关联权重，重点关注相关性高的字词，弱化无关字词。`
+重要的三组向量：
+- Query（Q 查询）：当前词，我要去找谁
+- Key（K 键）：候选对象的标签
+- Value（V 值）：候选对象携带的信息
+执行流程：
+1. Q 和所有 K 做点积 → 衡量相似度
+2. 除以$(\sqrt{d_k})$缩放，防止维度太高点积数值爆炸
+3. Softmax 归一化，得到**注意力权重（0~1，总和为 1）**
+4. 权重 和 V 加权求和 → 输出结果
+公式：
+$(\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V)$
 
+**Pytorch框架？**（看飞天闪客）
+`Tensor张量`、`Parameter参数`、`Modulet容器/层`、`Autograd梯度计算`、`Optimizer优化参数`
 
-
-神经网络是什么？
-Attention是什么？
-Pytorch框架？
+### Minimind分析模型架构解读
+![[Pasted image 20260731173957.png]]
