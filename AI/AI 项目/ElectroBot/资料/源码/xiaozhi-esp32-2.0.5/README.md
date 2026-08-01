@@ -1,6 +1,6 @@
 # An MCP-based Chatbot
 
-(English | [中文](README_zh.md) | [日本語](README_ja.md))
+(English | [中文](AI/AI%20项目/ElectroBot/资料/源码/xiaozhi-esp32-2.0.5/README_zh.md) | [日本語](README_ja.md))
 
 ## Introduction
 
@@ -14,7 +14,7 @@ As a voice interaction entry, the XiaoZhi AI chatbot leverages the AI capabiliti
 
 ## Version Notes
 
-The current v2 version is incompatible with the v1 partition table, so it is not possible to upgrade from v1 to v2 via OTA. For partition table details, see [partitions/v2/README.md](partitions/v2/README.md).
+The current v2 version is incompatible with the v1 partition table, so it is not possible to upgrade from v1 to v2 via OTA. For partition table details, see [partitions/v2/README.md](AI/AI%20项目/ElectroBot/资料/源码/xiaozhi-esp32-2.0.5/partitions/v2/README.md).
 
 All hardware running v1 can be upgraded to v2 by manually flashing the firmware.
 
@@ -24,7 +24,7 @@ The stable version of v1 is 1.9.2. You can switch to v1 by running `git checkout
 
 - Wi-Fi / ML307 Cat.1 4G
 - Offline voice wake-up [ESP-SR](https://github.com/espressif/esp-sr)
-- Supports two communication protocols ([Websocket](docs/websocket.md) or MQTT+UDP)
+- Supports two communication protocols ([Websocket](websocket.md) or MQTT+UDP)
 - Uses OPUS audio codec
 - Voice interaction based on streaming ASR + LLM + TTS architecture
 - Speaker recognition, identifies the current speaker [3D Speaker](https://github.com/modelscope/3D-Speaker)
@@ -46,7 +46,7 @@ See the Feishu document tutorial:
 
 Breadboard demo:
 
-![Breadboard Demo](docs/v1/wiring2.jpg)
+![Breadboard Demo](wiring2.jpg)
 
 ### Supports 70+ Open Source Hardware (Partial List)
 
@@ -121,11 +121,11 @@ The firmware connects to the official [xiaozhi.me](https://xiaozhi.me) server by
 
 ### Developer Documentation
 
-- [Custom Board Guide](docs/custom-board.md) - Learn how to create custom boards for XiaoZhi AI
-- [MCP Protocol IoT Control Usage](docs/mcp-usage.md) - Learn how to control IoT devices via MCP protocol
-- [MCP Protocol Interaction Flow](docs/mcp-protocol.md) - Device-side MCP protocol implementation
-- [MQTT + UDP Hybrid Communication Protocol Document](docs/mqtt-udp.md)
-- [A detailed WebSocket communication protocol document](docs/websocket.md)
+- [Custom Board Guide](custom-board.md) - Learn how to create custom boards for XiaoZhi AI
+- [MCP Protocol IoT Control Usage](mcp-usage.md) - Learn how to control IoT devices via MCP protocol
+- [MCP Protocol Interaction Flow](mcp-protocol.md) - Device-side MCP protocol implementation
+- [MQTT + UDP Hybrid Communication Protocol Document](mqtt-udp.md)
+- [A detailed WebSocket communication protocol document](websocket.md)
 
 ## Large Model Configuration
 

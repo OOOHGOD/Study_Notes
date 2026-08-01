@@ -65,7 +65,7 @@ python convert_p3_to_audio.py input.p3 output.wav
 
 一个图形化的工具，支持批量转换音频到P3，P3到音频
 
-![](./img/img.png)
+![](img.png)
 
 ### 使用方法：
 ```bash
