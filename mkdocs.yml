@@ -1,0 +1,88 @@
+site_name: DC 的 AI 学习笔记
+site_description: AI Agent、大语言模型与 Python 学习笔记
+site_url: https://ooohgod.github.io/Study_Notes/
+repo_url: https://github.com/OOOHGOD/Study_Notes
+repo_name: OOOHGOD/Study_Notes
+edit_uri: edit/main/
+
+docs_dir: site_docs
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+plugins:
+  - search:
+      lang: zh
+
+hooks:
+  - mkdocs_hooks.py
+
+nav:
+  - 首页: index.md
+  - AI Agent:
+      - 子 Agent 调度器: AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md
+      - 从 ToolCall 到 Harness、Claw: AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md
+      - OpenAI 使用笔记: AI/AI Agent学习/从ToolCall到Harness、Claw/项目实践笔记.md
+  - 大语言模型:
+      - Attention Is All You Need: AI/大模型LLM学习/Attention is all you need 学习笔记.md
+      - MiniMind 从零手敲大模型: AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md
+  - Python:
+      - Type Hints 类型提示: AI/Python查缺补漏/TypeHints类型提示语法.md
+      - pyproject.toml: AI/Python查缺补漏/什么是pyproject.toml.md
+      - 装饰器: AI/Python查缺补漏/装饰器知识点{done}.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: Copyright &copy; 2026 DC

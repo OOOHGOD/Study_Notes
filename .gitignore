@@ -26,6 +26,7 @@ __pycache__/
 .ruff_cache/
 dist/
 build/
+site/
 
 # Logs and temporary files
 *.log
