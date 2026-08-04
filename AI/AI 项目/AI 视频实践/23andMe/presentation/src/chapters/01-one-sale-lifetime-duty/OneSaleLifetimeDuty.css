@@ -1,0 +1,1170 @@
+.os-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: var(--text);
+  font-family: var(--font-display-cn);
+}
+
+.os-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.os-source {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+}
+
+/* Step 0 — one payment against an endless biological obligation. */
+.os-hook-scene {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  padding: 94px 108px 86px;
+}
+
+.os-zine-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  animation: os-paper-reveal 1100ms var(--ease-quart) forwards;
+}
+
+.os-zine-wash img {
+  position: absolute;
+  top: -140px;
+  right: -8px;
+  width: 760px;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: contrast(0.94) saturate(0.88);
+  transform: translate3d(34px, -28px, 0) scale(1.08) rotate(1.4deg);
+  animation: os-paper-drift 5600ms var(--ease-soft) 300ms forwards;
+}
+
+.os-zine-wash i {
+  position: absolute;
+  right: 300px;
+  bottom: 102px;
+  width: 148px;
+  height: 8px;
+  background: var(--accent);
+  transform: rotate(-10deg) scaleX(0);
+  transform-origin: right;
+  animation: os-register-strike 620ms var(--ease-overshoot) 1250ms forwards;
+}
+
+.os-hook-copy {
+  align-self: center;
+  position: relative;
+  z-index: 2;
+}
+
+.os-hook-line {
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  width: max-content;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  opacity: 0;
+  transform: translateY(38px);
+  animation: os-hook-rise 900ms var(--ease-quart) forwards;
+}
+
+.os-hook-line-one {
+  margin-top: 60px;
+}
+
+.os-hook-line-life {
+  margin-top: 32px;
+  animation-delay: 380ms;
+}
+
+.os-hook-line strong {
+  font-family: var(--font-display-en);
+  font-size: 160px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.os-hook-note {
+  margin: 64px 0 0;
+  padding-top: 24px;
+  width: 590px;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  animation: os-ink-in 650ms var(--ease-soft) 900ms forwards;
+}
+
+.os-hook-visual {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.os-receipt {
+  position: absolute;
+  top: 122px;
+  left: 24px;
+  width: 224px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-2);
+  border: var(--rule-w) var(--rule-style) var(--rule);
+  box-shadow: 14px 14px 0 var(--accent-soft);
+  transform: rotate(-5deg) scale(1.18);
+  opacity: 0;
+  animation: os-ticket-stamp 720ms var(--ease-overshoot) 150ms forwards;
+}
+
+.os-receipt::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 28px;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+}
+
+.os-receipt span,
+.os-receipt small {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.08em;
+  color: var(--text-mute);
+}
+
+.os-receipt b {
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-size: 108px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.os-life-line {
+  position: absolute;
+  left: 253px;
+  top: 276px;
+  width: 320px;
+  border-top: 4px solid var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: os-line-grow 1000ms var(--ease-quart) 650ms forwards;
+}
+
+.os-hook-visual .os-dna {
+  position: absolute;
+  right: 0;
+  bottom: 48px;
+  width: 310px;
+  height: 710px;
+}
+
+.os-infinity {
+  position: absolute;
+  right: 254px;
+  bottom: 76px;
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-size: 144px;
+  font-style: italic;
+  opacity: 0;
+  animation: os-ink-in 700ms var(--ease-soft) 1400ms forwards;
+}
+
+.os-dna {
+  overflow: visible;
+  color: var(--text);
+}
+
+.os-dna-strand,
+.os-dna-rung {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 8;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: square;
+  stroke-dasharray: 920;
+  stroke-dashoffset: 920;
+  animation: os-dna-draw 1500ms var(--ease-quart) 500ms forwards;
+}
+
+.os-dna-b {
+  stroke: var(--accent);
+  animation-delay: 700ms;
+}
+
+.os-dna-rung {
+  stroke: var(--rule);
+  stroke-width: 5;
+  animation-duration: 900ms;
+  animation-delay: 1050ms;
+}
+
+/* Step 1 — razor handle is static; the profit stream is replacement blades. */
+.os-razor-scene {
+  display: grid;
+  grid-template-columns: 590px 280px 160px 1fr;
+  align-items: center;
+  padding: 90px 105px;
+}
+
+.os-razor-copy {
+  align-self: start;
+  margin-top: 102px;
+}
+
+.os-razor-copy h2,
+.os-razor-copy h3 {
+  margin: 30px 0 0;
+  font-size: 74px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.os-razor-copy h3 {
+  color: var(--accent);
+  font-size: 92px;
+}
+
+.os-razor-model {
+  position: relative;
+  width: 230px;
+  height: 550px;
+  transform: rotate(-10deg) translateY(-40px);
+  opacity: 0;
+  animation: os-razor-drop 850ms var(--ease-overshoot) forwards;
+}
+
+.os-razor-head {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 200px;
+  height: 112px;
+  padding: 22px 18px;
+  display: grid;
+  gap: 8px;
+  background: var(--text);
+  transform: skewX(-8deg);
+}
+
+.os-razor-head i,
+.os-blade span {
+  display: block;
+  height: 5px;
+  background: var(--surface);
+}
+
+.os-razor-neck {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  width: 48px;
+  height: 90px;
+  background: var(--text);
+}
+
+.os-razor-handle {
+  position: absolute;
+  top: 154px;
+  left: 68px;
+  width: 92px;
+  height: 370px;
+  background: var(--text);
+  clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+}
+
+.os-flow-arrow {
+  width: 150px;
+  height: 50px;
+  color: var(--accent);
+}
+
+.os-flow-arrow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.os-razor-scene > .os-flow-arrow {
+  opacity: 0;
+  transform: translateX(-18px);
+  animation: os-flow-in 650ms var(--ease-quart) 700ms forwards;
+}
+
+.os-blade-stream {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  gap: 30px;
+}
+
+.os-blade {
+  width: 180px;
+  height: 112px;
+  padding: 26px 22px;
+  display: grid;
+  gap: 10px;
+  background: var(--text);
+  opacity: 0;
+  transform: translateX(120px) rotate(7deg);
+  animation: os-blade-arrive 700ms var(--ease-quart) forwards;
+  animation-delay: calc(780ms + var(--os-order) * 160ms);
+}
+
+.os-repeat-word {
+  position: absolute;
+  right: 88px;
+  bottom: 70px;
+  width: 760px;
+  display: flex;
+  gap: 64px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.15em;
+  opacity: 0;
+  transform: translateX(220px);
+  animation: os-ticker-reveal 1450ms var(--ease-expo) 1350ms forwards;
+}
+
+.os-repeat-word span {
+  flex: 0 0 auto;
+}
+
+/* Step 2 — a transaction line ends after the first mark. */
+.os-one-sale-scene {
+  padding: 86px 110px;
+}
+
+.os-brand-block {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  opacity: 0;
+  transform: translateY(-34px);
+  animation: os-brand-wipe 720ms var(--ease-quart) forwards;
+}
+
+.os-brand-block img {
+  width: 310px;
+  height: auto;
+}
+
+.os-brand-block span {
+  padding-left: 34px;
+  border-left: var(--rule-w) var(--rule-style) var(--rule);
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.13em;
+}
+
+.os-one-sale-copy {
+  display: grid;
+  grid-template-columns: 300px 360px 1fr;
+  align-items: baseline;
+  margin-top: 138px;
+}
+
+.os-one-sale-copy p {
+  margin: 0;
+  color: var(--text-mute);
+  font-size: 42px;
+}
+
+.os-purchase-count {
+  color: var(--accent);
+  font-size: 240px;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: os-count-stamp 700ms var(--ease-overshoot) 250ms forwards;
+}
+
+.os-one-sale-copy h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 86px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.os-terminal-track {
+  position: absolute;
+  left: 250px;
+  right: 130px;
+  bottom: 154px;
+  height: 72px;
+}
+
+.os-track-dot {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(0);
+  animation: os-dot-pop 500ms var(--ease-overshoot) 850ms forwards;
+}
+
+.os-track-line {
+  position: absolute;
+  left: 36px;
+  right: 170px;
+  top: 31px;
+  border-top: 3px solid var(--rule);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: os-line-grow 800ms var(--ease-quart) 1050ms forwards;
+}
+
+.os-track-cut {
+  position: absolute;
+  right: 138px;
+  top: 0;
+  width: 6px;
+  height: 64px;
+  background: var(--accent);
+  transform: scaleY(0);
+  animation: os-cut-down 460ms var(--ease-overshoot) 1600ms forwards;
+}
+
+.os-terminal-track span {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 700;
+  opacity: 0;
+  animation: os-ink-in 450ms var(--ease-soft) 1750ms forwards;
+}
+
+/* Step 3 — official collection graphics laid out as a physical workflow. */
+.os-kit-scene {
+  padding: 90px 110px 74px;
+  display: flex;
+  flex-direction: column;
+}
+
+.os-kit-copy h2 {
+  margin: 24px 0 0;
+  font-size: 94px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.os-kit-flow {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 150px 1fr 150px 1fr;
+  align-items: center;
+  margin-top: 52px;
+}
+
+.os-kit-flow figure {
+  margin: 0;
+  height: 490px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+  background: var(--surface-2);
+  border-top: 8px solid var(--accent);
+  border-bottom: var(--rule-w) var(--rule-style) var(--rule);
+  opacity: 0;
+  transform: translateY(55px);
+  animation: os-card-rise 780ms var(--ease-quart) forwards;
+}
+
+.os-kit-flow figure:nth-of-type(2) {
+  animation-delay: 420ms;
+}
+
+.os-kit-flow figure:nth-of-type(3) {
+  animation-delay: 840ms;
+}
+
+.os-kit-flow img {
+  width: 235px;
+  image-rendering: auto;
+  clip-path: inset(0 100% 0 0);
+  transform: rotate(-3deg) scale(0.94);
+  animation: os-kit-ink 760ms var(--ease-quart) 280ms forwards;
+}
+
+.os-kit-flow figure:nth-of-type(2) img {
+  animation-delay: 700ms;
+}
+
+.os-kit-flow figure:nth-of-type(3) img {
+  animation-delay: 1120ms;
+}
+
+.os-kit-flow figcaption {
+  width: 100%;
+  padding: 24px 26px;
+  border-top: var(--rule-w) var(--rule-style) var(--rule);
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.os-kit-flow .os-flow-arrow path {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: os-arrow-draw 600ms var(--ease-quart) 650ms forwards;
+}
+
+.os-kit-flow .os-flow-arrow:nth-of-type(2) path {
+  animation-delay: 1060ms;
+}
+
+.os-source {
+  align-self: flex-end;
+}
+
+/* Steps 4–6 — one result is revealed per narration beat. */
+.os-results-scene {
+  display: grid;
+  place-items: center;
+}
+
+.os-results-center {
+  position: relative;
+  z-index: 2;
+  width: 420px;
+  height: 420px;
+  display: grid;
+  place-items: center;
+  border: 4px solid var(--text);
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 24px 24px 0 var(--accent-soft);
+  transform: scale(0.72);
+  opacity: 0;
+  animation: os-center-open 760ms var(--ease-overshoot) forwards;
+}
+
+.os-results-center::after {
+  content: "";
+  position: absolute;
+  inset: -34px;
+  border: 3px dashed var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.72) rotate(-32deg);
+  animation: os-orbit-open 1500ms var(--ease-expo) 420ms forwards;
+}
+
+.os-dna-compact {
+  width: 150px;
+  height: 250px;
+}
+
+.os-results-center > span {
+  position: absolute;
+  bottom: 46px;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.18em;
+}
+
+.os-result {
+  position: absolute;
+  z-index: 3;
+  width: 400px;
+  min-height: 220px;
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--surface-2);
+  border-top: 9px solid var(--accent);
+  border-bottom: var(--rule-w) var(--rule-style) var(--rule);
+  opacity: 0;
+  transform: translateY(42px) scale(0.94);
+  animation: os-result-arrive 700ms var(--ease-quart) 420ms forwards;
+}
+
+.os-result b {
+  font-size: 70px;
+  line-height: 1;
+}
+
+.os-result small {
+  margin-top: 24px;
+  color: var(--text-mute);
+  font-size: 25px;
+}
+
+.os-result-origin {
+  left: 135px;
+  top: 130px;
+}
+
+.os-result-family {
+  right: 128px;
+  top: 124px;
+}
+
+.os-result-health {
+  right: 142px;
+  bottom: 108px;
+}
+
+.os-result.is-past {
+  opacity: 0.42;
+  transform: scale(0.88);
+  animation: none;
+}
+
+.os-result.is-past b {
+  color: var(--text-mute);
+}
+
+.os-result.is-active::after {
+  content: "";
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  bottom: 28px;
+  height: 6px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: os-active-underline 620ms var(--ease-quart) 900ms forwards;
+}
+
+.os-result-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.os-result-links path {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 4;
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+}
+
+.os-result-links path.is-visible {
+  animation: os-link-draw 820ms var(--ease-quart) 180ms forwards;
+}
+
+/* Step 7 — a second test disappears because the underlying DNA persists. */
+.os-repeat-test-scene {
+  display: grid;
+  grid-template-rows: 1fr 420px;
+  padding: 92px 112px 78px;
+}
+
+.os-constant-copy {
+  align-self: center;
+}
+
+.os-constant-title {
+  display: flex;
+  align-items: baseline;
+  gap: 44px;
+  margin-top: 22px;
+}
+
+.os-constant-title span {
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-size: 220px;
+  font-style: italic;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.os-constant-title b {
+  font-size: 88px;
+  font-weight: 700;
+}
+
+.os-test-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 250px;
+  align-items: center;
+}
+
+.os-test {
+  position: relative;
+  z-index: 2;
+  min-height: 230px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--surface-2);
+  border-top: 9px solid var(--text);
+}
+
+.os-test span {
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.12em;
+}
+
+.os-test b {
+  margin-top: 24px;
+  font-size: 70px;
+}
+
+.os-test-first {
+  transform: translateX(-70px);
+  opacity: 0;
+  animation: os-test-first 700ms var(--ease-quart) forwards;
+}
+
+.os-test-second {
+  color: var(--text-mute);
+  border-top-color: var(--accent);
+  transform: translateX(90px) scale(1.08);
+  opacity: 0;
+  animation: os-test-question 1000ms var(--ease-expo) 600ms forwards;
+}
+
+.os-test-second b {
+  color: var(--accent);
+}
+
+.os-test-line {
+  position: absolute;
+  left: 24%;
+  right: 24%;
+  top: 50%;
+  border-top: 4px solid var(--rule);
+  transform: scaleX(0);
+  animation: os-line-grow 700ms var(--ease-quart) 360ms forwards;
+}
+
+/* Step 8 — an expressive pen scene turns the imbalance into a physical event. */
+.os-balance-scene {
+  padding: 72px 92px 66px;
+  display: grid;
+  grid-template-rows: 190px 1fr;
+}
+
+.os-balance-title h2 {
+  margin: 20px 0 0;
+  font-size: 82px;
+  letter-spacing: -0.035em;
+}
+
+.os-duty-art {
+  position: relative;
+  min-height: 710px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-top: 9px solid var(--accent);
+  border-bottom: var(--rule-w) var(--rule-style) var(--rule);
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  animation: os-duty-frame 1050ms var(--ease-expo) 120ms forwards;
+}
+
+.os-duty-art > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  mix-blend-mode: multiply;
+  filter: contrast(1.04) saturate(0.94);
+  transform: translate3d(58px, 14px, 0) scale(1.08);
+  animation: os-duty-settle 4200ms var(--ease-soft) 360ms forwards;
+}
+
+.os-duty-scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -80px;
+  width: 12px;
+  background: var(--accent);
+  opacity: 0;
+  transform: skewX(-8deg);
+  animation: os-duty-scan 1300ms var(--ease-expo) 540ms forwards;
+}
+
+.os-duty-label {
+  position: absolute;
+  z-index: 2;
+  min-width: 250px;
+  padding: 18px 24px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 18px;
+  align-items: baseline;
+  background: var(--surface);
+  border-top: 7px solid var(--text);
+  box-shadow: 12px 12px 0 var(--accent-soft);
+  opacity: 0;
+  transform: translateY(28px) rotate(-2deg);
+  animation: os-duty-label-in 680ms var(--ease-overshoot) 1250ms forwards;
+}
+
+.os-duty-label span {
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-size: 62px;
+  font-style: italic;
+  line-height: 0.9;
+}
+
+.os-duty-label b {
+  font-size: 34px;
+}
+
+.os-duty-label small {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  color: var(--text-mute);
+  font-size: 24px;
+}
+
+.os-duty-income {
+  left: 66px;
+  bottom: 64px;
+}
+
+.os-duty-archive {
+  right: 58px;
+  bottom: 48px;
+  border-top-color: var(--accent);
+  animation-delay: 1540ms;
+}
+
+/* Step 9 — the final thesis lands beside the printed poster and opens along a fault line. */
+.os-close-scene {
+  display: grid;
+  grid-template-columns: 1fr 620px;
+  padding: 88px 110px;
+}
+
+.os-close-rule {
+  position: absolute;
+  top: 88px;
+  left: 110px;
+  right: 110px;
+  width: auto;
+}
+
+.os-close-copy {
+  align-self: center;
+  position: relative;
+  z-index: 2;
+}
+
+.os-close-copy > p {
+  margin: 0 0 42px;
+  color: var(--text-mute);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 0.12em;
+}
+
+.os-close-copy h2 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 150px;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.os-close-copy h2 span {
+  margin-left: 170px;
+  color: var(--accent);
+  font-family: var(--font-display-en);
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(80px);
+  animation: os-close-shift 900ms var(--ease-quart) 420ms forwards;
+}
+
+.os-close-sub {
+  margin-top: 72px;
+  width: max-content;
+  padding: 22px 30px;
+  background: var(--text);
+  color: var(--surface);
+  font-size: 38px;
+  font-weight: 700;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: os-label-open 760ms var(--ease-quart) 1050ms forwards;
+}
+
+.os-close-poster {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  justify-self: end;
+  width: 560px;
+  height: 850px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: var(--rule-w) var(--rule-style) var(--rule);
+  box-shadow: 20px 20px 0 var(--accent-soft);
+  opacity: 0;
+  transform: translate3d(95px, 42px, 0) rotate(3deg) scale(0.94);
+  animation: os-poster-arrive 980ms var(--ease-overshoot) 160ms forwards;
+}
+
+.os-close-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  mix-blend-mode: multiply;
+  transform: translateY(38px) scale(1.06);
+  animation: os-poster-drift 4800ms var(--ease-soft) 920ms forwards;
+}
+
+.os-crack {
+  position: absolute;
+  right: 70px;
+  bottom: 42px;
+  z-index: 3;
+  width: 560px;
+  height: 900px;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.os-crack path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 12;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 1250;
+  stroke-dashoffset: 1250;
+  animation: os-crack-open 1450ms var(--ease-expo) 220ms forwards;
+}
+
+.os-crack path:nth-child(2) {
+  animation-delay: 950ms;
+}
+
+.os-crack path:nth-child(3) {
+  animation-delay: 1150ms;
+}
+
+@keyframes os-hook-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes os-paper-reveal {
+  0% { opacity: 0; clip-path: inset(0 0 100% 0); }
+  100% { opacity: 0.32; clip-path: inset(0); }
+}
+
+@keyframes os-paper-drift {
+  to { transform: translate3d(-10px, 14px, 0) scale(1.02) rotate(-0.4deg); }
+}
+
+@keyframes os-register-strike {
+  to { transform: rotate(-10deg) scaleX(1); }
+}
+
+@keyframes os-ink-in {
+  to { opacity: 1; }
+}
+
+@keyframes os-ticket-stamp {
+  to { opacity: 1; transform: rotate(-5deg) scale(1); }
+}
+
+@keyframes os-line-grow {
+  to { transform: scaleX(1); }
+}
+
+@keyframes os-dna-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes os-razor-drop {
+  to { opacity: 1; transform: rotate(-10deg) translateY(0); }
+}
+
+@keyframes os-flow-in {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes os-blade-arrive {
+  to { opacity: 1; transform: translateX(0) rotate(0); }
+}
+
+@keyframes os-ticker-reveal {
+  0% { opacity: 0; transform: translateX(220px); }
+  65% { opacity: 1; }
+  100% { opacity: 0.68; transform: translateX(-70px); }
+}
+
+@keyframes os-brand-wipe {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes os-count-stamp {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes os-dot-pop {
+  to { transform: scale(1); }
+}
+
+@keyframes os-cut-down {
+  to { transform: scaleY(1); }
+}
+
+@keyframes os-card-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes os-kit-ink {
+  to { clip-path: inset(0); transform: rotate(0) scale(1); }
+}
+
+@keyframes os-arrow-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes os-center-open {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes os-orbit-open {
+  0% { opacity: 0; transform: scale(0.72) rotate(-32deg); }
+  45% { opacity: 0.74; }
+  100% { opacity: 0.38; transform: scale(1) rotate(118deg); }
+}
+
+@keyframes os-result-arrive {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes os-active-underline {
+  to { transform: scaleX(1); }
+}
+
+@keyframes os-link-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes os-test-first {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes os-test-question {
+  55% { opacity: 1; transform: translateX(0) scale(1); }
+  100% { opacity: 0.5; transform: translateX(0) scale(0.78); }
+}
+
+@keyframes os-balance-tip {
+  50% { transform: rotate(0deg) scaleX(1); }
+  100% { transform: rotate(7deg) scaleX(1); }
+}
+
+@keyframes os-pan-left {
+  to { opacity: 1; transform: translateY(-45px); }
+}
+
+@keyframes os-pan-right {
+  to { opacity: 1; transform: translateY(45px); }
+}
+
+@keyframes os-duty-frame {
+  0% { opacity: 0; clip-path: inset(0 100% 0 0); }
+  100% { opacity: 1; clip-path: inset(0); }
+}
+
+@keyframes os-duty-settle {
+  to { transform: translate3d(0, 0, 0) scale(1.01); }
+}
+
+@keyframes os-duty-scan {
+  0% { left: -80px; opacity: 0; }
+  18% { opacity: 0.88; }
+  84% { opacity: 0.58; }
+  100% { left: calc(100% + 80px); opacity: 0; }
+}
+
+@keyframes os-duty-label-in {
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@keyframes os-close-shift {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes os-label-open {
+  to { transform: scaleX(1); }
+}
+
+@keyframes os-poster-arrive {
+  to { opacity: 1; transform: translate3d(0, 0, 0) rotate(-1.3deg) scale(1); }
+}
+
+@keyframes os-poster-drift {
+  to { transform: translateY(-16px) scale(1.015); }
+}
+
+@keyframes os-crack-open {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-scene *,
+  .os-scene *::before,
+  .os-scene *::after {
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
