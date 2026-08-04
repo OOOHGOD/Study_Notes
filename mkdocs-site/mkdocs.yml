@@ -9,6 +9,12 @@ docs_dir: site_docs
 site_dir: site
 strict: true
 
+watch:
+  - ../AI/AI Agent学习/Function Calling学习
+  - ../AI/AI Agent学习/从ToolCall到Harness、Claw
+  - ../AI/大模型LLM学习
+  - ../AI/Python查缺补漏
+
 theme:
   name: material
   language: zh

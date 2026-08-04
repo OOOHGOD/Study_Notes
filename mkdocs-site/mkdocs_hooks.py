@@ -15,7 +15,7 @@ from mkdocs.exceptions import PluginError
 from mkdocs.structure.files import File, Files
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parent
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 
 # Pilot scope: only these eight Markdown files can become public site pages.
 PILOT_PAGES = (
@@ -52,11 +52,12 @@ def _git_tracked_paths() -> set[str]:
     except (OSError, subprocess.CalledProcessError) as exc:
         raise PluginError("无法读取 Git 跟踪清单；为避免泄露本地文件，已停止构建。") from exc
 
-    return {
+    tracked = {
         item.decode("utf-8").replace("\\", "/")
         for item in result.stdout.split(b"\0")
         if item
     }
+    return {path for path in tracked if (REPOSITORY_ROOT / path).is_file()}
 
 
 def _normalize_repo_path(path: PurePosixPath) -> str:
