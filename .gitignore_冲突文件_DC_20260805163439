@@ -1,0 +1,41 @@
+# Local/private study materials
+interview*/
+**/interview*/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Obsidian local state and cache
+.obsidian/workspace*.json
+.obsidian/plugins/github-contributions/
+.obsidian/cache/
+.obsidian/trash/
+
+# Dependency/build/cache folders
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+site/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.baiduyun.p.downloading
+
+# Baidu Sync conflict copies and obsolete pre-reorganization path
+*_冲突文件_*
+/AI Agent学习/
