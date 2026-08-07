@@ -1,0 +1,987 @@
+{
+  "ok": true,
+  "frames_root": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames",
+  "states": [
+    "idle",
+    "running-right",
+    "running-left",
+    "waving",
+    "jumping",
+    "failed",
+    "waiting",
+    "running",
+    "review"
+  ],
+  "errors": [],
+  "warnings": [
+    "review frame 00 has 210 non-transparent pixels near the cell edge",
+    "review frame 01 has 210 non-transparent pixels near the cell edge",
+    "review frame 02 has 210 non-transparent pixels near the cell edge",
+    "review frame 03 has 210 non-transparent pixels near the cell edge",
+    "review frame 04 has 210 non-transparent pixels near the cell edge",
+    "review frame 05 has 210 non-transparent pixels near the cell edge"
+  ],
+  "rows": [
+    {
+      "state": "idle",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10546,
+          "bbox": [
+            36,
+            39,
+            154,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 9973,
+          "bbox": [
+            25,
+            40,
+            141,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 9740,
+          "bbox": [
+            25,
+            39,
+            140,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10415,
+          "bbox": [
+            24,
+            39,
+            144,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 9286,
+          "bbox": [
+            40,
+            46,
+            155,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\idle\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10071,
+          "bbox": [
+            36,
+            39,
+            152,
+            164
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "running-right",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15600,
+          "bbox": [
+            8,
+            39,
+            180,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15571,
+          "bbox": [
+            7,
+            40,
+            178,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 16131,
+          "bbox": [
+            7,
+            40,
+            178,
+            171
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15978,
+          "bbox": [
+            13,
+            39,
+            185,
+            171
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15624,
+          "bbox": [
+            8,
+            37,
+            183,
+            173
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15895,
+          "bbox": [
+            6,
+            38,
+            180,
+            175
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 6,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15955,
+          "bbox": [
+            12,
+            39,
+            184,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 7,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-right\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15834,
+          "bbox": [
+            8,
+            38,
+            180,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "running-left",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15600,
+          "bbox": [
+            12,
+            39,
+            184,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15571,
+          "bbox": [
+            14,
+            40,
+            185,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 16131,
+          "bbox": [
+            14,
+            40,
+            185,
+            171
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15978,
+          "bbox": [
+            7,
+            39,
+            179,
+            171
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15624,
+          "bbox": [
+            9,
+            37,
+            184,
+            173
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15895,
+          "bbox": [
+            12,
+            38,
+            186,
+            175
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 6,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15955,
+          "bbox": [
+            8,
+            39,
+            180,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 7,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running-left\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15834,
+          "bbox": [
+            12,
+            38,
+            184,
+            170
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "waving",
+      "expected_frames": 4,
+      "actual_frames": 4,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waving\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10600,
+          "bbox": [
+            19,
+            67,
+            172,
+            188
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waving\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15861,
+          "bbox": [
+            20,
+            45,
+            172,
+            188
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waving\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15824,
+          "bbox": [
+            19,
+            46,
+            172,
+            188
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waving\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15861,
+          "bbox": [
+            20,
+            45,
+            172,
+            188
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "jumping",
+      "expected_frames": 5,
+      "actual_frames": 5,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\jumping\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14797,
+          "bbox": [
+            19,
+            31,
+            184,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\jumping\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14440,
+          "bbox": [
+            13,
+            38,
+            177,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\jumping\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14317,
+          "bbox": [
+            14,
+            39,
+            173,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\jumping\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14292,
+          "bbox": [
+            12,
+            38,
+            173,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\jumping\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 14794,
+          "bbox": [
+            17,
+            30,
+            180,
+            178
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "failed",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 11293,
+          "bbox": [
+            33,
+            40,
+            150,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10834,
+          "bbox": [
+            32,
+            45,
+            150,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 11226,
+          "bbox": [
+            34,
+            42,
+            155,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10722,
+          "bbox": [
+            41,
+            41,
+            159,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 11262,
+          "bbox": [
+            43,
+            40,
+            159,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10919,
+          "bbox": [
+            43,
+            45,
+            160,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 6,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 11232,
+          "bbox": [
+            38,
+            42,
+            159,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 7,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\failed\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 10749,
+          "bbox": [
+            34,
+            41,
+            152,
+            168
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "waiting",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15626,
+          "bbox": [
+            15,
+            36,
+            172,
+            173
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15626,
+          "bbox": [
+            15,
+            36,
+            172,
+            173
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15700,
+          "bbox": [
+            6,
+            36,
+            173,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15700,
+          "bbox": [
+            6,
+            36,
+            173,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15737,
+          "bbox": [
+            8,
+            36,
+            172,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\waiting\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 15737,
+          "bbox": [
+            8,
+            36,
+            172,
+            172
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "running",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 18083,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 18083,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17876,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17768,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 17821,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\running\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 18037,
+          "bbox": [
+            7,
+            27,
+            181,
+            177
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    },
+    {
+      "state": "review",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": null,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "review frame 00 has 210 non-transparent pixels near the cell edge",
+        "review frame 01 has 210 non-transparent pixels near the cell edge",
+        "review frame 02 has 210 non-transparent pixels near the cell edge",
+        "review frame 03 has 210 non-transparent pixels near the cell edge",
+        "review frame 04 has 210 non-transparent pixels near the cell edge",
+        "review frame 05 has 210 non-transparent pixels near the cell edge"
+      ],
+      "frames": [
+        {
+          "index": 0,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21733,
+          "bbox": [
+            0,
+            44,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 1,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21662,
+          "bbox": [
+            0,
+            44,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 2,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21748,
+          "bbox": [
+            0,
+            44,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 3,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21712,
+          "bbox": [
+            0,
+            44,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 4,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21878,
+          "bbox": [
+            0,
+            42,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        },
+        {
+          "index": 5,
+          "file": "D:\\BaiduSyncdisk\\Couresware\\Study_Notes\\pet-runs\\yuexinmiao1-v2\\frames\\review\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21732,
+          "bbox": [
+            0,
+            44,
+            192,
+            200
+          ],
+          "edge_pixels": 210,
+          "chroma_adjacent_pixels": 0
+        }
+      ]
+    }
+  ]
+}

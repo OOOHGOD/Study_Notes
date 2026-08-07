@@ -6,6 +6,5 @@
   "alwaysUpdateLinks": true,
   "strictLineBreaks": true,
   "smartIndentList": false,
-  "tabSize": 2,
-  "promptDelete": false
+  "tabSize": 2
 }
