@@ -15,7 +15,7 @@ hide:
 
 - [AgentTool：子 Agent 调度器](<AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md>)
 - [从 ToolCall 到 Harness、Claw](<AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md>)
-- [OpenAI 使用笔记](<AI/AI Agent学习/从ToolCall到Harness、Claw/项目实践笔记.md>)
+- [OpenAI 使用笔记](<项目实践问题笔记.md>)
 
 ## 大语言模型
 
