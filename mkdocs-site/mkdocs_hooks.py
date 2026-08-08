@@ -21,7 +21,6 @@ REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 PILOT_PAGES = (
     "AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md",
     "AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md",
-    "AI/AI Agent学习/从ToolCall到Harness、Claw/项目实践笔记.md",
     "AI/大模型LLM学习/Attention is all you need 学习笔记.md",
     "AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md",
     "AI/Python查缺补漏/TypeHints类型提示语法.md",
