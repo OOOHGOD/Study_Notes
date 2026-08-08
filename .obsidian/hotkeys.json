@@ -15,5 +15,14 @@
       ],
       "key": "R"
     }
+  ],
+  "contribution-graph:create-graph": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "M"
+    }
   ]
 }

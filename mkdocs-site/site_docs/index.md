@@ -15,12 +15,12 @@ hide:
 
 - [AgentTool：子 Agent 调度器](<AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md>)
 - [从 ToolCall 到 Harness、Claw](<AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md>)
-- [OpenAI 使用笔记](<项目实践问题笔记.md>)
+- [OpenAI 使用笔记](<实践问题笔记.md>)
 
 ## 大语言模型
 
-- [Attention Is All You Need 学习笔记](<AI/大模型LLM学习/Attention is all you need 学习笔记.md>)
-- [MiniMind：PyTorch 从零手敲大模型](<AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md>)
+- [Attention Is All You Need 学习笔记](<Attention is all you need 学习笔记.md>)
+- [MiniMind：PyTorch 从零手敲大模型](<Minimind Pytorch从零手敲大模型笔记.md>)
 
 ## Python 工程
 

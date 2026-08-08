@@ -10,4 +10,4 @@ category: "AI 工具"
 ---
 
 我们在Codex设置中看到一个，名为钩子（hook）的选项 但是不知道有什么用，本章就来介绍这个工具的用法。
-![[Pasted image 20260713150030.png]]
+![[AI/AI 工具学习/Codex/什么是hook？/附件/Pasted image 20260713150030.png]]

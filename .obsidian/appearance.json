@@ -1,5 +1,6 @@
 {
   "cssTheme": "Maple",
   "theme": "system",
-  "accentColor": ""
+  "accentColor": "",
+  "showRibbon": true
 }
