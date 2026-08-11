@@ -180,6 +180,14 @@ Rules:
 """
 ```
 
+![[Pasted image 20260728172346.png]]
+查看ReAct项目实现
+```python
+#跳转到这个检查点
+git checkout 900cea2d9dfcaea4028e3fabe03d140a6f99dbef
+```
+ 
+
 ### 🎬 演示效果
 
 ```bash
@@ -191,6 +199,8 @@ Agent 会：
 2. 思考 → 调用 BashTool 执行 `python snake.py`
 3. 观察输出 → 如有报错则思考修复 → 调用 FileEditTool 修改
 4. 最终返回结果总结
+
+
 
 > 实验结果：
 ![[Pasted image 20260729173651.png]]
@@ -306,6 +316,7 @@ mokioclaw "帮我创建一个简易的贪吃蛇游戏代码，并执行出来给
 ---
 
 ## 阶段二：改为 LangGraph —— Plan → Execute → Verify
+![[caf1b75c2a09c41dfc70d26a152c1b6e.jpg]]
 
 
 ### 🎯 设计目标

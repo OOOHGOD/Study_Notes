@@ -1722,13 +1722,7 @@ context engineer四大思想
 ## 第七部分 项目实现VibeCoding
 > vibecoding时代很多代码不用自己去敲，这里主要讲解vibe思路
 
+[[Agent项目实践篇规划]]
 ![[Pasted image 20260728175800.png]]
 
 
-![[Pasted image 20260728172346.png]]
-查看ReAct项目实现
-```python
-#跳转到这个检查点
-git checkout 900cea2d9dfcaea4028e3fabe03d140a6f99dbef
-```
- 
