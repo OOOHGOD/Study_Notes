@@ -78,7 +78,8 @@ src/mokioclaw/
 
 ### 🎯 设计目标
 
-用最简单的 ReAct（Reasoning + Acting）循环，让 Agent 能**听懂指令、创建文件、执行代码**。这是整个项目的地基。
+> [!note]
+> 用最简单的 ReAct（Reasoning + Acting）循环，让 Agent 能**听懂指令、创建文件、执行代码**。这是整个项目的地基。
 
 ### 🏗️ 架构设计
 
@@ -187,7 +188,6 @@ Rules:
 git checkout 900cea2d9dfcaea4028e3fabe03d140a6f99dbef
 ```
  
-
 ### 🎬 演示效果
 
 ```bash
@@ -318,10 +318,10 @@ mokioclaw "帮我创建一个简易的贪吃蛇游戏代码，并执行出来给
 ## 阶段二：改为 LangGraph —— Plan → Execute → Verify
 ![[caf1b75c2a09c41dfc70d26a152c1b6e.jpg]]
 
-
 ### 🎯 设计目标
 
-ReAct 循环太"盲目"了——Agent 想到哪做到哪，没有规划，没有验证。引入 LangGraph，实现 **计划 → 执行 → 检查** 的结构化循环。
+> [!note]
+> ReAct 循环太"盲目"了——Agent 想到哪做到哪，没有规划，没有验证。引入 LangGraph，实现 **计划 → 执行 → 检查** 的结构化循环。
 
 ### 🏗️ 架构设计
 ```
@@ -350,12 +350,12 @@ ReAct 循环太"盲目"了——Agent 想到哪做到哪，没有规划，没有
                   yes  │      │  no
                        ▼      ▼
                 ┌─────────┐  ┌─────────┐
-                │  Final   │  │ Planner │  ← 重新规划修复方案
+                │  Final  │  │ Planner │  ← 重新规划修复方案
                 └────┬────┘  └─────────┘
                      │            │
                      ▼            │
-                ┌─────────┐      │
-                │   END   │◀─────┘
+                ┌─────────┐       │
+                │   END   │◀──────┘
                 └─────────┘  (max_attempts 次后也到 END)
 ```
 
@@ -365,12 +365,11 @@ ReAct 循环太"盲目"了——Agent 想到哪做到哪，没有规划，没有
 - **add_conditional_edges**：根据 state 的某个字段决定路由方向
 - **compile()**：编译为可执行的图
 
-**Agent 节点：**
-| 节点 | 职责 | 工具 |
-|------|------|------|
-| Planner | 分析任务、制定计划、定义验收标准 | TodoWriteTool |
-| Actor | 按计划逐步执行、创建/修改文件 | FileReadTool、FileWriteTool、FileEditTool、GrepTool、BashTool |
-| Verifier | 运行验收命令、检查产出物、判断通过/失败 | BashTool、FileReadTool、GrepTool |
+| 节点           | 职责                     | 工具                                                        |
+| ------------ | ---------------------- | --------------------------------------------------------- |
+| **Planner**  | 分析任务、制定计划、定义验收标准       | TodoWriteTool                                             |
+| **Actor**    | 按计划逐步执行、创建 / 修改文件      | FileReadTool、FileWriteTool、FileEditTool、GrepTool、BashTool |
+| **Verifier** | 运行验收命令、检查产出物、判断通过 / 失败 | BashTool、FileReadTool、GrepTool                            |
 
 ### 📝 Prompt 设计
 

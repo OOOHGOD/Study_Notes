@@ -14,11 +14,11 @@ category: "任务与想法"
 - [ ] 文言文/古汉语 学习app（AI agent、记忆曲线、打关、）
 - [ ] AI ElectronBot 聊天助手
 - [ ] IELTS 做题助手
-
+- [ ] 企业微信机器人 
 
 
 
 ---
 ## Idea
 - [ ] 停车架
-- [ ] 
+- [ ] 24h todo list 提醒机器人
