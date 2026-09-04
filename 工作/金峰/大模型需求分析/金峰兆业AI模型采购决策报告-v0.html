@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>金峰兆业 AI 模型采购决策报告 · v0</title>
+  <style>
+    :root{--navy:#10243a;--navy2:#1b3855;--paper:#f3f1ec;--white:#fffdfa;--ink:#172331;--muted:#65717c;--line:#d8d4cb;--gold:#b7833f;--green:#2f6e5b;--soft:#e8ecea}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Microsoft YaHei","Noto Sans CJK SC",sans-serif;text-wrap:pretty}
+    h1,h2,h3{font-family:"STZhongsong","Songti SC",serif;margin:0;letter-spacing:-.02em}button{font:inherit}
+    .page{width:min(1440px,calc(100% - 40px));margin:auto;padding:28px 0 64px}
+    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;color:var(--muted);font-size:12px}.stamp{border:1px solid var(--gold);color:var(--gold);padding:6px 10px;letter-spacing:.12em}
+    .hero{background:var(--navy);color:white;min-height:500px;padding:48px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;border-radius:6px}
+    .kicker{color:#d7b881;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin:0 0 20px}.hero h1{font-size:clamp(38px,5vw,72px);line-height:1.08;max-width:760px}.lead{color:#cad3dc;font-size:19px;max-width:720px;margin:24px 0 36px}.decision{border-top:1px solid #496078;padding-top:24px;font-size:18px}.decision strong{color:#efd39f}
+    .facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid #496078;align-self:stretch}.fact{padding:26px;border-bottom:1px solid #496078}.fact:nth-child(odd){border-right:1px solid #496078}.fact:nth-last-child(-n+2){border-bottom:0}.num{display:block;font:700 42px/1 Consolas,monospace;color:white}.label{display:block;color:#aebdca;font-size:12px;margin-top:10px}
+    section{margin-top:38px}.head{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start;margin-bottom:18px}.index{font:700 12px Consolas,monospace;color:var(--gold);letter-spacing:.12em}.head h2{font-size:32px}.head p{grid-column:2;color:var(--muted);margin:4px 0 0}
+    .needs{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--white);border-radius:6px;overflow:hidden}.need{padding:26px;min-height:220px}.need+.need{border-left:1px solid var(--line)}.need b{display:block;color:var(--gold);font:700 12px Consolas,monospace;margin-bottom:34px}.need h3{font-size:20px}.need p{color:var(--muted);font-size:14px;margin-bottom:0}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.plan{position:relative;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:26px;min-height:330px}.plan.recommended{border:2px solid var(--green);padding:25px}.badge{position:absolute;right:16px;top:16px;background:var(--green);color:white;font-size:11px;padding:4px 8px}.plan .code{font:700 12px Consolas,monospace;color:var(--muted)}.plan h3{font-size:24px;margin:34px 0 12px}.plan p{color:var(--muted);font-size:14px}.plan dl{margin:24px 0 0;border-top:1px solid var(--line)}.plan dl div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.plan dt{color:var(--muted)}.plan dd{margin:0;font-weight:700}
+    .recommendation{display:grid;grid-template-columns:.8fr 1.2fr;background:var(--navy2);color:white;border-radius:6px;overflow:hidden}.rec-title{padding:34px;border-right:1px solid #496078}.rec-title h2{font-size:36px}.rec-title p{color:#bac7d1}.layers{display:grid;grid-template-columns:repeat(3,1fr)}.layer{padding:30px}.layer+.layer{border-left:1px solid #496078}.layer span{font:700 12px Consolas,monospace;color:#d7b881}.layer h3{margin:30px 0 8px}.layer p{color:#bac7d1;font-size:13px}
+    .placeholder{border:1px dashed #9ca3a7;background:rgba(255,255,255,.28);padding:30px;color:var(--muted);text-align:center;border-radius:6px}.placeholder strong{display:block;color:var(--ink);margin-bottom:6px}
+    footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+    @media(max-width:980px){.hero,.recommendation{grid-template-columns:1fr}.facts{min-height:300px}.needs,.plans{grid-template-columns:1fr 1fr}.need:nth-child(3){border-left:0;border-top:1px solid var(--line)}.need:nth-child(4){border-top:1px solid var(--line)}.rec-title{border-right:0;border-bottom:1px solid #496078}}
+    @media(max-width:640px){.page{width:calc(100% - 24px)}.hero{padding:28px}.needs,.plans,.layers{grid-template-columns:1fr}.need+.need,.layer+.layer{border-left:0;border-top:1px solid var(--line)}.head{grid-template-columns:1fr}.head p{grid-column:1}.top,footer{align-items:flex-start;flex-direction:column;gap:10px}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <div class="top"><span>金峰兆业时尚产业社区 · 内部决策材料</span><span class="stamp">V0 · 版式确认稿</span></div>
+  <header class="hero">
+    <div>
+      <p class="kicker">AI Model Procurement Decision Brief</p>
+      <h1>AI 模型代理采购<br>决策建议</h1>
+      <p class="lead">面向园区电商、鞋服制造与企业服务场景，在成本、稳定性、内容生产能力和治理风险之间建立可持续的模型组合。</p>
+      <div class="decision"><strong>建议方向：</strong>采用“基础模型池＋专业视觉模型＋高阶备用模型”的分层组合，先试点、后放量，不以单一模型覆盖全部场景。</div>
+    </div>
+    <div class="facts" aria-label="企业材料关键数字">
+      <div class="fact"><span class="num">200+</span><span class="label">入驻企业</span></div>
+      <div class="fact"><span class="num">100+</span><span class="label">电商企业</span></div>
+      <div class="fact"><span class="num">80%+</span><span class="label">园区入驻率</span></div>
+      <div class="fact"><span class="num">3</span><span class="label">重点产业场景</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="head"><span class="index">01 / NEEDS</span><div><h2>从企业结构出发，而不是从模型品牌出发</h2><p>以下需求由企业介绍中的产业构成推导，属于采购需求假设，正式立项前应访谈验证。</p></div></div>
+    <div class="needs">
+      <article class="need"><b>A · 高频文本</b><h3>电商内容与客服</h3><p>商品标题、详情页、客服答复、直播脚本与多语言改写。关注单位成本、响应速度和批量并发。</p></article>
+      <article class="need"><b>B · 视觉生产</b><h3>鞋服图片与视频</h3><p>商品图、场景图、短视频素材与版本迭代。按张、按秒和按 Token 的报价不可直接横比。</p></article>
+      <article class="need"><b>C · 园区服务</b><h3>招商与行政知识</h3><p>企业问答、政策资料、招商文案和内部文档。关注知识边界、权限管理与答案可追溯。</p></article>
+      <article class="need"><b>D · 复杂任务</b><h3>品牌与经营分析</h3><p>方案评审、长文档分析、策略推演。调用频率较低，可采用按需开放的高阶模型。</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="index">02 / OPTIONS</span><div><h2>三种采购策略</h2><p>v0 先确认表达层级；下一版将补入具体模型、L1 成本和选择依据。</p></div></div>
+    <div class="plans">
+      <article class="plan"><span class="code">OPTION A</span><h3>稳定优先型</h3><p>核心业务更多采用官转渠道，强调可控性与正式服务保障。</p><dl><div><dt>成本水平</dt><dd>较高</dd></div><div><dt>渠道风险</dt><dd>较低</dd></div><div><dt>适用</dt><dd>敏感 / 核心业务</dd></div></dl></article>
+      <article class="plan recommended"><span class="badge">建议</span><span class="code">OPTION B</span><h3>均衡组合型</h3><p>高频任务采用成本可控的基础模型，高价值任务按需调用高阶模型，视觉场景独立选型。</p><dl><div><dt>成本水平</dt><dd>可控</dd></div><div><dt>渠道风险</dt><dd>可分层管理</dd></div><div><dt>适用</dt><dd>园区多企业共用</dd></div></dl></article>
+      <article class="plan"><span class="code">OPTION C</span><h3>成本优先型</h3><p>更多采用低价渠道，仅建议用于低敏感、可回退、可人工复核的非核心任务。</p><dl><div><dt>成本水平</dt><dd>最低</dd></div><div><dt>渠道风险</dt><dd>需重点评估</dd></div><div><dt>适用</dt><dd>沙盒 / 批量试验</dd></div></dl></article>
+    </div>
+  </section>
+
+  <section class="recommendation">
+    <div class="rec-title"><p class="kicker">Recommended architecture</p><h2>推荐：三层模型池</h2><p>按任务价值和风险分流，避免高价模型承接所有低价值调用，也避免低价渠道进入敏感业务。</p></div>
+    <div class="layers">
+      <article class="layer"><span>01 / BASE</span><h3>基础模型池</h3><p>客服、文案、分类、摘要等高频任务。以成本、速度和稳定性为主。</p></article>
+      <article class="layer"><span>02 / CREATIVE</span><h3>视觉生产池</h3><p>商品图与短视频独立评测，以单件合格内容成本而非名义单价决策。</p></article>
+      <article class="layer"><span>03 / PREMIUM</span><h3>高阶备用池</h3><p>复杂策略、重要文件与疑难任务按权限调用，并设置预算阈值。</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><span class="index">03 / NEXT</span><div><h2>完整版将补充</h2><p>确认版式与表达方向后，再把数据和推荐依据完整落位。</p></div></div>
+    <div class="placeholder"><strong>模型推荐矩阵 · 成本对比 · 试点计划 · 风险清单 · 完整价格明细</strong>沿用现有 112 条价格数据，并增加面向老板的结论和可追溯依据。</div>
+  </section>
+
+  <footer><span>企业数字：用户提供项目介绍（OCR 整理材料）</span><span>价格版本：国际站 ALL · 2026-08-11</span></footer>
+</main>
+</body>
+</html>
