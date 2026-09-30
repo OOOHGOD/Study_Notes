@@ -39,3 +39,6 @@ site/
 # Baidu Sync conflict copies and obsolete pre-reorganization path
 *_冲突文件_*
 /AI Agent学习/
+
+# WorkBuddy project data
+.workbuddy/
