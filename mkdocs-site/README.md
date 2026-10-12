@@ -49,6 +49,13 @@ py -m venv .\mkdocs-site\.venv
 
 ## 增加公开笔记
 
+“工作”和“留学”目录禁止发布到网站，包括被学习笔记引用的附件；构建会检查实际文件路径并阻止发布。这些目录仍正常同步到私密 GitHub 仓库。
+
+## 自动构建与网站发布
+
+推送 main 时执行严格构建。网站部署默认关闭，避免私密仓库没有 Pages 服务时出现部署失败。
+若已确认账号支持私密仓库 Pages，并在仓库 Settings → Pages 设置 GitHub Actions 作为发布源，可在 Settings → Secrets and variables → Actions → Variables 添加 `ENABLE_PAGES_DEPLOY=true` 开启部署。个人账号从私密仓库发布 Pages 通常需要 GitHub Pro；网站内容仍可能公开，请先确认白名单。
+
 1. 确认笔记及附件适合公开，并且已经被 Git 跟踪。
 2. 把笔记路径添加到 `mkdocs-site/mkdocs_hooks.py` 的 `PILOT_PAGES`。
 3. 把同一路径添加到 `mkdocs-site/mkdocs.yml` 的 `nav`。

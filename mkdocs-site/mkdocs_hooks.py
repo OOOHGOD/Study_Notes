@@ -16,6 +16,17 @@ from mkdocs.structure.files import File, Files
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+PRIVATE_DIRECTORIES = {"工作", "留学"}
+
+
+def _check_publishable_path(repo_path: str) -> None:
+    resolved = (REPOSITORY_ROOT / repo_path).resolve()
+    try:
+        relative = resolved.relative_to(REPOSITORY_ROOT)
+    except ValueError as exc:
+        raise PluginError(f"站点文件越过仓库边界：{repo_path}") from exc
+    if PRIVATE_DIRECTORIES.intersection(relative.parts):
+        raise PluginError(f"禁止将工作或留学资料发布到网站：{repo_path}")
 
 # Pilot scope: only these eight Markdown files can become public site pages.
 PILOT_PAGES = (
@@ -110,6 +121,7 @@ def _resolve_wiki_asset(
 
 
 def _append_generated_file(files: Files, config: MkDocsConfig, repo_path: str) -> None:
+    _check_publishable_path(repo_path)
     if files.get_file_from_path(repo_path) is not None:
         return
     source = REPOSITORY_ROOT / repo_path
@@ -119,6 +131,9 @@ def _append_generated_file(files: Files, config: MkDocsConfig, repo_path: str) -
 def on_files(files: Files, config: MkDocsConfig, **kwargs: object) -> Files:
     """Add only allowlisted notes and their tracked local images to MkDocs."""
     del kwargs
+    for file in files:
+        if file.abs_src_path:
+            _check_publishable_path(str(Path(file.abs_src_path).relative_to(REPOSITORY_ROOT)))
     tracked = _git_tracked_paths()
     tracked_by_name: dict[str, list[str]] = defaultdict(list)
     for path in tracked:
