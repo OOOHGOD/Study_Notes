@@ -12,7 +12,7 @@ strict: true
 watch:
   - ../AI/AI Agent学习/Function Calling学习
   - ../AI/AI Agent学习/从ToolCall到Harness、Claw
-  - ../AI/大模型LLM学习
+  - ../AI/LLM大模型学习
   - ../AI/Python查缺补漏
 
 theme:
@@ -55,8 +55,8 @@ nav:
       - 子 Agent 调度器: AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md
       - 从 ToolCall 到 Harness、Claw: AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md
   - 大语言模型:
-      - Attention Is All You Need: AI/大模型LLM学习/Attention is all you need 学习笔记.md
-      - MiniMind 从零手敲大模型: AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md
+      - Attention Is All You Need: AI/LLM大模型学习/Attention is all you need 学习笔记{done}.md
+      - MiniMind 从零手敲大模型: AI/LLM大模型学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md
   - Python:
       - Type Hints 类型提示: AI/Python查缺补漏/TypeHints类型提示语法.md
       - pyproject.toml: AI/Python查缺补漏/什么是pyproject.toml.md

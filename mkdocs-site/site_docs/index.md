@@ -18,8 +18,8 @@ hide:
 
 ## 大语言模型
 
-- [Attention Is All You Need 学习笔记](<AI/大模型LLM学习/Attention is all you need 学习笔记.md>)
-- [MiniMind：PyTorch 从零手敲大模型](<AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md>)
+- [Attention Is All You Need 学习笔记](<AI/LLM大模型学习/Attention is all you need 学习笔记{done}.md>)
+- [MiniMind：PyTorch 从零手敲大模型](<AI/LLM大模型学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md>)
 
 ## Python 工程
 

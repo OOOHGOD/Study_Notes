@@ -32,8 +32,8 @@ def _check_publishable_path(repo_path: str) -> None:
 PILOT_PAGES = (
     "AI/AI Agent学习/Function Calling学习/AgentTool：子 Agent 调度器.md",
     "AI/AI Agent学习/从ToolCall到Harness、Claw/从ToolCall到Harness、Claw笔记.md",
-    "AI/大模型LLM学习/Attention is all you need 学习笔记.md",
-    "AI/大模型LLM学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md",
+    "AI/LLM大模型学习/Attention is all you need 学习笔记{done}.md",
+    "AI/LLM大模型学习/Minimind 学习/Minimind Pytorch从零手敲大模型笔记.md",
     "AI/Python查缺补漏/TypeHints类型提示语法.md",
     "AI/Python查缺补漏/什么是pyproject.toml.md",
     "AI/Python查缺补漏/装饰器知识点{done}.md",
@@ -132,7 +132,7 @@ def on_files(files: Files, config: MkDocsConfig, **kwargs: object) -> Files:
     """Add only allowlisted notes and their tracked local images to MkDocs."""
     del kwargs
     for file in files:
-        if file.abs_src_path:
+        if file.abs_src_path and Path(file.abs_src_path).is_relative_to(REPOSITORY_ROOT):
             _check_publishable_path(str(Path(file.abs_src_path).relative_to(REPOSITORY_ROOT)))
     tracked = _git_tracked_paths()
     tracked_by_name: dict[str, list[str]] = defaultdict(list)
