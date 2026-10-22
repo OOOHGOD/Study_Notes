@@ -1,10 +1,28 @@
-**English** | [简体中文](README.zh-CN.md)
+<div align="center">
 
 # Study Notes
 
+A working knowledge base for AI agents, automation, and digital media.
+
+**English** · [简体中文](README.zh-CN.md)
+
+![Obsidian](https://img.shields.io/badge/Obsidian-334155?style=flat-square) ![AI Agents](https://img.shields.io/badge/AI%20Agents-334155?style=flat-square) ![Digital Media](https://img.shields.io/badge/Digital%20Media-334155?style=flat-square) [![MIT License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)](LICENSE)
+
+</div>
+
+<p align="center">
+<a href="#overview">Overview</a> · <a href="#layout-and-status">Layout and status</a> · <a href="#author--license">Author &amp; License</a>
+</p>
+
+---
+
+> **Project focus** · Knowledge Base
+
+
+## Overview
+
 An evolving Obsidian knowledge base of AI-agent learning, Python practice, workflow automation, robotics references, and AI-assisted digital-media experiments. Most source notes are in Chinese; this README provides an English map.
 
-**Categories:** Artificial Intelligence · AI & Digital Media
 
 ## Explore
 
@@ -56,8 +74,8 @@ Review the selected-page list, tracked attachments, and configuration before cha
 
 These are working notes and experiments, not one installable application. Some content describes unfinished work or duplicates earlier versions. Third-party tutorials, papers, media, firmware, plugins, and reference code retain their own rights; the root MIT grant only covers eligible original contributions.
 
-## Author and license
+## Author & License
 
-Author / maintainer: [https://github.com/OOOHGOD](https://github.com/OOOHGOD).
+Author / maintainer: [OOOHGOD](https://github.com/OOOHGOD) · Original contributions: [MIT License](LICENSE)
 
-Eligible original contributions are under the [MIT License](LICENSE), permitting commercial use and modification with preservation of copyright and license notices in copies or substantial portions. [License scope](LICENSE_SCOPE.md) explains third-party exclusions and upstream terms.
+Commercial use and modification are permitted with preservation of copyright and license notices in copies or substantial portions. Third-party code, datasets, models, and media retain their own terms; see [license scope](LICENSE_SCOPE.md).

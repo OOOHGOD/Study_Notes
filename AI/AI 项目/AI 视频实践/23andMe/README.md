@@ -1,11 +1,28 @@
-# 23andMe Interactive Web Presentation
+<div align="center">
 
-**English** | [简体中文](README.zh-CN.md)
+# 23andMe · Interactive Web Presentation
+
+From narration beats to an interactive React presentation.
+
+**English** · [简体中文](README.zh-CN.md)
+
+![React](https://img.shields.io/badge/React-149ECA?style=flat-square) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square) [![MIT License](https://img.shields.io/badge/License-MIT-2563EB?style=flat-square)](../../../../LICENSE)
+
+</div>
+
+<p align="center">
+<a href="#overview">Overview</a> · <a href="#author--license">Author &amp; License</a>
+</p>
+
+---
+
+> **Project focus** · Digital Storytelling
+
+
+## Overview
 
 An AI-assisted storytelling experiment turning Chinese narration and a chapter outline into a step-driven React presentation.
 
-**Category:** AI & Digital Media  
-**Stack:** React · TypeScript · Vite · CSS
 
 ## Implementation status
 
@@ -41,6 +58,8 @@ npm run preview
 
 Audio synthesis scripts require separate provider configuration. Business-narrative claims and referenced materials need their own source checks before publication.
 
-## Attribution and rights
+## Author & License
 
-Author / maintainer: [https://github.com/OOOHGOD](https://github.com/OOOHGOD). The root [MIT License](../../../../LICENSE) covers eligible original code and documentation. [License scope](../../../../LICENSE_SCOPE.md) excludes third-party text, logos, photographs, fonts, and other referenced media; consult asset source records before reuse.
+Author / maintainer: [OOOHGOD](https://github.com/OOOHGOD) · Original contributions: [MIT License](../../../../LICENSE)
+
+Commercial use and modification are permitted with preservation of copyright and license notices in copies or substantial portions. Third-party code, datasets, models, and media retain their own terms; see [license scope](../../../../LICENSE_SCOPE.md).
