@@ -1,19 +1,15 @@
 ---
-title: "大模型 Agent 从 0 到 1"
-summary: "从应用场景、核心组件和工作流程入手，系统讲解大模型 Agent 的基础知识。"
+title: 大模型 Agent 从 0 到 1
+summary: 从应用场景、核心组件和工作流程入手，系统讲解大模型 Agent 的基础知识。
 tags:
-  - "AI-Agent"
-  - "大语言模型"
-  - "入门教程"
-created:
-category: "AI Agent"
+  - AI-Agent
+  - 大语言模型
+  - 入门教程
+created: 2026-10-19
+category: AI Agent
 ---
 
 ---
-
-
-
-
 
 ## **什么是Agent？为什么说它是AI的下一个战场**
 ### 1\.1 从ChatGPT到Agent的进化
