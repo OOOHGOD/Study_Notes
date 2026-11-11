@@ -36,7 +36,7 @@ An evolving Obsidian knowledge base of AI-agent learning, Python practice, workf
 | Interactive storytelling | [23andMe web-presentation experiment](AI/AI%20%E9%A1%B9%E7%9B%AE/AI%20%E8%A7%86%E9%A2%91%E5%AE%9E%E8%B7%B5/23andMe/README.md) |
 | Character production | [Animated mascot experiment](AI/AI%20%E9%A1%B9%E7%9B%AE/pet-runs/yuexinmiao1-v2/README.md) |
 | Robotics references | [Project materials](%E9%A1%B9%E7%9B%AE/) |
-| Site build and preview | [MkDocs instructions](mkdocs-site/README.md) |
+| Site build and preview | [MkDocs instructions](mkdocs-site网站/README.md) |
 
 ## Local use
 

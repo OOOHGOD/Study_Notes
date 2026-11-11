@@ -15,6 +15,7 @@ category: "任务与想法"
 - [ ] AI ElectronBot 聊天助手
 - [ ] IELTS 做题助手
 - [ ] 企业微信机器人 
+- [ ]  使用dsh做个人工作台
 
 
 

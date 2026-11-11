@@ -63,7 +63,7 @@ python -m mkdocs serve -f mkdocs-site/mkdocs.yml
 python -m mkdocs build -f mkdocs-site/mkdocs.yml --strict
 ```
 
-修改发布设置前，应检查已选页面、已跟踪附件与构建配置；本次 README 排版不启用网站发布。更多说明见 [MkDocs 使用文档](mkdocs-site/README.md)。
+修改发布设置前，应检查已选页面、已跟踪附件与构建配置；本次 README 排版不启用网站发布。更多说明见 [MkDocs 使用文档](mkdocs-site网站/README.md)。
 
 ## 目录与维护
 
