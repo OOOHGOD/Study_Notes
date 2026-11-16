@@ -22,4 +22,4 @@ category: "任务与想法"
 ---
 ## Idea
 - [ ] 停车架
-- [ ] 24h todo list 提醒机器人
+- [ ] 24h todo list 提醒水墨屏
